@@ -1,2 +1,6 @@
 rootProject.name = 'ATMInteface'
+include 'src:main:bank'
+findProject(':src:main:bank')?.name = 'bank'
+include 'src:main:bank'
+findProject(':src:main:bank')?.name = 'bank'
 
