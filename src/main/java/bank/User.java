@@ -35,4 +35,8 @@ public class User {
         return true;
     }
 
+    public boolean checkPassword(String password){
+        return this.password.compare(password);
+    }
+
 }

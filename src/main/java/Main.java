@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Please login... \n");
 
         String username = getUsername();
-        String pin = getPin();
+        String pin = getPassword();
 
         Session s = b.signIn(username, pin).get();
 
@@ -30,8 +30,8 @@ public class Main {
         return scanner.nextLine();
     }
 
-    private static String getPin() {
-        System.out.print("Pin: ");
+    private static String getPassword() {
+        System.out.print("Password: ");
         return scanner.nextLine();
     }
 
