@@ -3,14 +3,14 @@ package bank;
 public class User {
     String username;
     String fullName;
-    String pin;
+    Password password;
 
     int balance;
 
-    public User(String username, String fullName, String pin){
+    public User(String username, String fullName, String password){
         this.username = username;
         this.fullName = fullName;
-        this.pin = pin;
+        this.password = new Password(password);
 
         this.balance = 1000; // <-- Starting balance
     }
