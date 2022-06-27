@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Created a password class that stores the password as a SHA256 hash">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bank/UserDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/bank/BankTest.java" afterDir="false" />
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Fixed so users can now sign up and sign in with passwords in the bank">
+      <change afterPath="$PROJECT_DIR$/src/main/java/PasswordX2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,11 +83,21 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="bank" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.BankTest.signUpAndIn">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ATMInteface.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BankTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -103,29 +112,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;bank.BankTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BankTest.signIn" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;bank.BankTest.signIn&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.BankTest.signUpAndIn" />
         <item itemvalue="Gradle.BankTest.signUpUserAlreadyExisting" />
         <item itemvalue="Gradle.BankTest.signInWrongUsernameAndPassword" />
         <item itemvalue="Gradle.BankTest" />
-        <item itemvalue="Gradle.BankTest.signIn" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656334851370</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed so users can now sign up and sign in with passwords in the bank">
+      <created>1656337291350</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656337291350</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +262,7 @@
     <MESSAGE value="Created project" />
     <MESSAGE value="Created a framework for the project. I will use this base to further plan and expand upon" />
     <MESSAGE value="Created a password class that stores the password as a SHA256 hash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a password class that stores the password as a SHA256 hash" />
+    <MESSAGE value="Fixed so users can now sign up and sign in with passwords in the bank" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed so users can now sign up and sign in with passwords in the bank" />
   </component>
 </project>
