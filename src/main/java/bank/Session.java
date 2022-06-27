@@ -1,6 +1,5 @@
 package bank;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Session {
@@ -67,7 +66,7 @@ public class Session {
     private void printWelcome() {
         String welcome =
                 "\n" +
-                "Welcome" + this.user.fullName +
+                "Welcome " + this.user.fullName +
                 "\n";
 
         System.out.println(welcome);

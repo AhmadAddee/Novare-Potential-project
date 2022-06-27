@@ -1,49 +1,42 @@
 package bank;
-
-import java.util.HashMap;
 import java.util.Optional;
 
 public class Bank {
-    HashMap<Integer, User> idToUser = new HashMap<>();
-    HashMap<String, User> usernameToUser = new HashMap<>();
 
-    public Bank(){
-        initMockupUsers();
+    private final UserDB userDB = new UserDB();
+
+    /**
+     * A method for signing in to the system
+     * @param username The username of a user in the system.
+     * @param password The password for the user.
+     * @return A session object which is used for communicating different operations to the bank. Will return Empty if either username or password was wrong.
+     */
+    public Optional<Session> signIn(String username, String password) {
+        Optional<User> user = userDB.get(username);
+
+        if(user.isPresent() && user.get().checkPassword(password))
+            return Optional.of(new Session(user.get()));
+
+        return Optional.empty();
     }
 
-    public Optional<Session> signIn(String username, String pin) {
-        boolean containsUser = usernameToUser.containsKey(username);
+    /**
+     * A method for creating new users.
+     * @param username Username of the user.
+     * @param fullName the full name of the user.
+     * @param password the password which the user has chosen.
+     * @return True if the user was added to the system. False if username is already in use.
+     */
+    public boolean signUp(String username, String fullName, String password){
+        boolean usernameAlreadyExists = userDB.containsUser(username);
+        if(usernameAlreadyExists)
+            return false;
 
-        if(!containsUser)
-            return Optional.empty();
-
-        //TODO: Add check for pin
-
-        return Optional.of(new Session(usernameToUser.get(username)));
-    }
-
-    public boolean signUp(String username, String fullName, String pin){
-        //TODO: Check for collision in username
-        User user = new User(username,fullName,pin);
-        int id = idToUser.size();
-        idToUser.put(id,user);
+        User user = new User(username,fullName,password);
+        userDB.addUser(user);
 
         return true;
     }
 
 
-    private void initMockupUsers(){
-        User u1 = new User("adam","Adam Bower","1234");
-        User u2 = new User("xX_Adam_Xx","Adam Hunter","4321");
-        User u3 = new User("__ADMA__","Adam Cruise","1343");
-
-        idToUser.put(0,u1);
-        usernameToUser.put((u1.username),u1);
-
-        idToUser.put(1,u2);
-        usernameToUser.put((u2.username),u2);
-
-        idToUser.put(2,u3);
-        usernameToUser.put((u3.username),u3);
-    }
 }
