@@ -41,6 +41,7 @@ public class Main {
                 s.loop();
             }
         }
+
     }
 
     private static Session login(Bank bank){
