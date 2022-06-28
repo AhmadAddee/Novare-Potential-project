@@ -12,6 +12,9 @@ TODO:
 - [X] User action : deposit
 - [X] User action : transfer
 - [X] User action : edit profile
-- [ ] User action : Change password
-- [ ] Make it so the user can logout and log in again.
+- [X] User action : Change password
+- [X] Make it so the user can logout and log in again.
 - [ ] Revisit the UML diagram
+
+
+![](http://www.plantuml.com/plantuml/png/ZLF1RjGm4BtxA-QuAvf3aU2mgbQbS6Wb18YgPpGaqwnLnpQUSOE4-7UoZcE2QLSzvisRz_oUdKiM3187ez0ODtuRz4zjUwKyjW_O4qIc0ByKG6kG6RuWy-X2bo201cwltxr-ynPyng-H3tcYhG2ZaUdpjoe2TxDUNfOmcIKFYmFzYzv7OpuLj3WNguI_Wk_E6K8BevP35t3S77rnSD7Ajg9qv1rhES6GW9RlAQmeP_EH0xMa7odK6z5tA7IN4sposIsD2_Jqmf9cjR10s_yB-t1LAlkeMIwEs3xLnggIRmFbysogTi-gOWjG6bsE-jcBTXPDzkafLPQ4RawHAiCvo1Hb3dA5zY75MEtU4hDsTW-iUnlzPllCsBXUssbQnFAarFBeTFVC4oZp-lxhySiklz1VSlCr-yIrft3OYWkmEohi01dykLB-79hecxc_7UpXA_s8nCA0m7CDXRFKieE9TsE5mgJ8gHYG0m5whzH2QfgKhdmdXVcv5QpONi3xzB9O9M3DLQcZfd4PoDz1zmVv-z-gIx9T7CmV)
