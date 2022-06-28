@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Add a view profile option for the user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PasswordX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PasswordX2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +55,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="small_cleanup" />
+        <entry key="$PROJECT_DIR$" value="7-implement-the-basic-user-actions" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -267,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656411466400</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add a view profile option for the user">
+      <created>1656412033258</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656412033258</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,6 +300,7 @@
     <MESSAGE value="Added a withdraw method for the session object" />
     <MESSAGE value="Cleaned up" />
     <MESSAGE value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
+    <MESSAGE value="Add a view profile option for the user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a view profile option for the user" />
   </component>
 </project>

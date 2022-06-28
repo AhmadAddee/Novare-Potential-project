@@ -1,7 +1,9 @@
+package bank;
+
 import java.util.Optional;
 import java.util.Scanner;
 
-class PasswordX2 {
+public class PasswordX2 {
     private final String p1, p2;
 
     public PasswordX2(Scanner scanner) {
