@@ -8,7 +8,9 @@ TODO:
 - [X] Secure passwords with SHA256
 - [X] User sign-up
 - [X] User login
-- [ ] User action : Whitdraw
-- [ ] User action : deposit
-- [ ] User action : transfer
-- [ ] User action : edit profile
+- [X] User action : Whitdraw
+- [X] User action : deposit
+- [X] User action : transfer
+- [X] User action : edit profile
+- [ ] User action : Change password
+- [ ] Make it so the user can logout and log in again.
