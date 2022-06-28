@@ -29,6 +29,7 @@ public class Session {
             case '3' -> BasicOp.transfer(this.user);
             case '4' -> BasicOp.viewBalance(this.user);
             case '5' -> BasicOp.updateUsername(this.user);
+            case '6' -> BasicOp.viewProfile(this.user);
             case 'h' -> BasicMsg.printOptions();
             case 'q' -> done = true;
             default -> BasicMsg.invalidOption();
@@ -117,6 +118,22 @@ public class Session {
                     "Sucess! You have now withdrawn money from you account. View your balance to see the changes",
                     "Could not process the transaction. Do you have enough funds on your account?"
             );
+
+            waitForClick();
+        }
+
+        public static void viewProfile(User user){
+            StringBuilder sb = new StringBuilder();
+
+            sb.append("-- Your profile --\n\n")
+                    .append("Username : ")
+                        .append(user.getUsername())
+                        .append("\n")
+                    .append("Full name : ")
+                        .append(user.getFullName())
+                        .append('\n');
+
+            System.out.println(sb.toString());
 
             waitForClick();
         }
