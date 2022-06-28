@@ -1,7 +1,9 @@
 package bank;
 
 import bank.user.User;
+import bank.user.UserDB;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Session {
@@ -14,18 +16,19 @@ public class Session {
 
     public void first() {
         BasicMsg.printWelcome(user);
-        BasicMsg.printOptions();
     }
 
     public void loop(){
-        //TODO:Implement the rest of the user actions
-
+        System.out.println("-----   Main Menu   -----");
+        BasicMsg.printOptions();
         char userInput = util.getOption();
 
         switch (userInput) {
             case '1' -> BasicOp.withdraw(this.user);
             case '2' -> BasicOp.deposit(this.user);
+            case '3' -> BasicOp.transfer(this.user);
             case '4' -> BasicOp.viewBalance(this.user);
+            case '5' -> BasicOp.updateUsername(this.user);
             case 'h' -> BasicMsg.printOptions();
             case 'q' -> done = true;
             default -> BasicMsg.invalidOption();
@@ -52,6 +55,8 @@ public class Session {
                     [2] Deposit\s
                     [3] Transfer\s
                     [4] View balance\s
+                    [5] Edit username\s
+                    [6] View profile\s
                     [q] to quit\s
                     [h] for this menu\s
                     """;
@@ -62,21 +67,43 @@ public class Session {
         public static void invalidOption(){
             System.out.println("Invalid option. Use [h] to show what options are available");
         }
+
+        public static void printUserList(){
+            final UserDB userDB = UserDB.getInstnace();
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < userDB.getNumberOfUsers(); i++) {
+                var tmpUser = userDB.get(i);
+                assert tmpUser.isPresent();
+
+                String username = tmpUser.get().getUsername();
+
+                sb.append("[")
+                    .append(i)
+                    .append("] ")
+                    .append(username)
+                    .append("\n");
+            }
+
+            System.out.println(sb.toString());
+        }
     }
 
     private static class BasicOp{
+        private static final Scanner scanner = new Scanner(System.in);
+
         public static void deposit(User user){
             int amount = util.readInt("""
                 You are about to deposit money into your account
                 How much would you like to deposit?""");
 
-            boolean r = user.withdraw(amount);
+            handle(
+                    user.deposit(amount),
+                    "Sucess! View your balance to see the change.",
+                    "Could not deposit to account. Only positive numbers are allowed"
+            );
 
-            if(!r){
-                System.out.println(
-                        "Could not process the transaction: to small balance on account"
-                );
-            }
+            waitForClick();
         }
 
         public static void withdraw(User user){
@@ -85,17 +112,67 @@ public class Session {
                 How much would you like to withdraw?
                 """);
 
-            boolean r = user.withdraw(amount);
+            handle(
+                    user.withdraw(amount),
+                    "Sucess! You have now withdrawn money from you account. View your balance to see the changes",
+                    "Could not process the transaction. Do you have enough funds on your account?"
+            );
 
-            if(!r){
-                System.out.println(
-                        "Could not process the transaction: to small balance on account"
-                );
-            }
+            waitForClick();
         }
 
         public static void viewBalance(User user){
             System.out.println("Your balance is " + user.getBalance());
+            waitForClick();
+        }
+
+        public static void transfer(User user){
+            final UserDB userDB = UserDB.getInstnace();
+            BasicMsg.printUserList();
+
+            System.out.print("Enter either a username or the corresponding [id]: ");
+
+            Optional<User> receiver = scanner.hasNextInt()?
+                    userDB.get(scanner.nextInt()):
+                    userDB.get(scanner.next());
+
+            int amount = util.readInt("""
+                    You are about to transfer money to another user.
+                    Please enter an amount to transfer: 
+                    """);
+
+            handle(
+                    receiver.isPresent() &&
+                    user.transfer(amount, receiver.get()),
+                    "Success! Money have now been transferred. " + receiver.get().getUsername() + " now has " + receiver.get().getBalance(),
+                    "Could not transfer the money."
+            );
+
+            waitForClick();
+        }
+
+        public static void updateUsername(User user){
+            System.out.print("New username");
+            //TODO: add check for valid username
+            String name = scanner.nextLine();
+
+            handle(
+                    user.updateUsername(name),
+                    "Success! Username changed.",
+                    "Could not change username. Either the username already exists or the provided username was invalid."
+            );
+
+            waitForClick();
+        }
+
+        private static void waitForClick(){
+            System.out.println("Operation done. Click enter to continue...");
+            scanner.nextLine();
+        }
+
+        private static void handle(boolean result, String onSuccess, String onError){
+            String msg = result?onSuccess:onError;
+            System.out.println(msg);
         }
     }
 
