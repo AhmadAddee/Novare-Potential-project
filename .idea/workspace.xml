@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="User can now quit and login again. And change password">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Merged">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PasswordX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PasswordX2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -53,7 +58,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="7-implement-the-basic-user-actions" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -304,9 +309,10 @@
     <MESSAGE value="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java" />
     <MESSAGE value="Added a withdraw method for the session object" />
     <MESSAGE value="Cleaned up" />
-    <MESSAGE value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
     <MESSAGE value="Add a view profile option for the user" />
     <MESSAGE value="User can now quit and login again. And change password" />
-    <option name="LAST_COMMIT_MESSAGE" value="User can now quit and login again. And change password" />
+    <MESSAGE value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
+    <MESSAGE value="Merged" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged" />
   </component>
 </project>
