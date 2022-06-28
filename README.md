@@ -14,3 +14,4 @@ TODO:
 - [X] User action : edit profile
 - [ ] User action : Change password
 - [ ] Make it so the user can logout and log in again.
+- [ ] Revisit the UML diagram
