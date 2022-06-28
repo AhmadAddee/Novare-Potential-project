@@ -1,4 +1,4 @@
-package bank;
+package bank.user;
 
 import java.util.HashMap;
 import java.util.Optional;
@@ -11,7 +11,12 @@ public class UserDB {
         initMockupUsers();
     }
 
-    private Optional<User> get(int id){
+    /**
+     * A method for getting a user based on a given ID.
+     * @param id The id of the user
+     * @return Either a user object or empty, if there was no
+     */
+    public Optional<User> get(int id){
         return Optional.ofNullable(idToUser.get(id));
     }
 
@@ -21,7 +26,7 @@ public class UserDB {
 
     public void addUser(User user){
         idToUser.put(idToUser.size(), user);
-        usernameToUser.put((user.username),user);
+        usernameToUser.put(user.getUsername(),user);
     }
 
     public boolean containsUser(String username){

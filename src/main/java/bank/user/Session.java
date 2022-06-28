@@ -1,11 +1,10 @@
-package bank;
+package bank.user;
 
 import java.util.Scanner;
 
 public class Session {
-    User user;
-
-    boolean done = false;
+    private final User user;
+    private boolean done = false;
 
     public Session(User user){
         this.user = user;
@@ -66,7 +65,7 @@ public class Session {
     private void printWelcome() {
         String welcome =
                 "\n" +
-                "Welcome " + this.user.fullName +
+                "Welcome " + this.user.getFullName() +
                 "\n";
 
         System.out.println(welcome);

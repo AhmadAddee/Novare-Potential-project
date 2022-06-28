@@ -1,4 +1,4 @@
-package bank;
+package bank.user;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -7,8 +7,8 @@ import java.util.Random;
 
 public class Password {
 
-    protected final Integer salt;
-    protected final byte[] hash;
+    private final Integer salt;
+    private final byte[] hash;
 
     public Password(String clearText) {
         Random rand = new Random();
@@ -38,5 +38,13 @@ public class Password {
     public boolean compare(String clearText){
         byte[] other = getSHA256(clearText,this.salt);
         return Arrays.equals(other,this.hash);
+    }
+
+    protected Integer getSalt(){
+        return this.salt;
+    }
+
+    protected byte[] getHash(){
+        return this.hash;
     }
 }
