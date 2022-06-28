@@ -24,7 +24,14 @@ public class UserDB {
         return Optional.ofNullable(usernameToUser.get(username));
     }
 
-    public void addUser(User user){
+    public void createUser(String username,String fullName, String password){
+        User u = new User(username,fullName,password);
+        addUser(u);
+    }
+
+    private void addUser(User user){
+        assert !this.containsUser(user.getUsername());
+
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
     }

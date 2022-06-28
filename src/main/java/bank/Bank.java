@@ -33,8 +33,7 @@ public class Bank {
         if(usernameAlreadyExists)
             return false;
 
-        User user = new User(username,fullName,password);
-        userDB.addUser(user);
+        userDB.createUser(username,fullName,password);
 
         return true;
     }

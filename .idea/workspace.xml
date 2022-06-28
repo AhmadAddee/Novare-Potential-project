@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Added a withdraw method for the session object">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656401455227</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added a withdraw method for the session object">
+      <created>1656402758565</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656402758565</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +279,7 @@
     <MESSAGE value="Created a password class that stores the password as a SHA256 hash" />
     <MESSAGE value="Fixed so users can now sign up and sign in with passwords in the bank" />
     <MESSAGE value="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java" />
+    <MESSAGE value="Added a withdraw method for the session object" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a withdraw method for the session object" />
   </component>
 </project>

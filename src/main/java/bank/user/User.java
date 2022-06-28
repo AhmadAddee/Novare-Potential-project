@@ -1,7 +1,5 @@
 package bank.user;
 
-import jdk.jshell.spi.ExecutionControl;
-
 public class User {
     private String username;
     private final String fullName;
@@ -23,8 +21,8 @@ public class User {
      * @param amount The amount of money to withdraw
      * @return True if successful, False if the balance < amount
      */
-    protected boolean withdraw(int amount){
-        if(amount > this.balance)
+    public boolean withdraw(int amount){
+        if(amount > this.balance || amount < 0)
             return false;
 
         this.balance -= amount;
@@ -37,7 +35,7 @@ public class User {
      * @param amount The amount of money the user have deposited into the ATM.
      * @return True if successful. False if an illegal format of amount was used.
      */
-    protected  boolean deposit(int amount){
+    public boolean deposit(int amount){
         if(amount <= 0)
             return false;
 
@@ -52,7 +50,7 @@ public class User {
      * @param receiver The user that will recive the money.
      * @return True if successful. False if the amount is negative.
      */
-    protected boolean transfer(int amount, User receiver){
+    public boolean transfer(int amount, User receiver){
         if(amount < 0 || this.balance < 0)
             return false;
 
@@ -63,24 +61,29 @@ public class User {
     }
 
 
-    protected boolean updateUsername(String newUsername){
+    public boolean updateUsername(String newUsername){
         //TODO check for name collision
         this.username = newUsername;
         return true;
     }
 
-    protected boolean updatePassword(Password newPassword){
+    public boolean updatePassword(Password newPassword){
         this.password = newPassword;
         return true;
     }
 
-    protected String getUsername(){
+    public String getUsername(){
         return username;
     }
 
-    protected String getFullName(){
+    public String getFullName(){
         return fullName;
     }
+
+    public int getBalance(){
+        return this.balance;
+    }
+
 
     public boolean checkPassword(String password){
         return this.password.compare(password);
