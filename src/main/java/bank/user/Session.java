@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class Session {
     private final User user;
     private boolean done = false;
+    private final Scanner scanner = new Scanner(System.in);
 
-    public Session(User user){
+
+    protected Session(User user){
         this.user = user;
     }
 
@@ -21,6 +23,7 @@ public class Session {
         char userInput = getOption();
 
         switch (userInput) {
+            case '1' -> withdraw();
             case '4' -> viewBalance();
             case 'h' -> printOptions();
             case 'q' -> done = true;
@@ -29,10 +32,33 @@ public class Session {
     }
 
     private char getOption() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Option: ");
-
         return scanner.next().charAt(0);
+    }
+
+    private void withdraw(){
+        System.out.println(
+                "You are about to withdraw money from your account \n" +
+                "How much would you like to withdraw?"
+        );
+
+        int amount = 0;
+
+        do {
+            System.out.print("Amount: ");
+            if(scanner.hasNextInt())
+                amount = scanner.nextInt();
+            else
+                System.out.println("Please enter a number");
+        }while (amount == 0);
+
+        boolean r = this.user.withdraw(amount);
+
+        if(!r){
+            System.out.println(
+                    "Could not process the transaction: to small balance on account"
+            );
+        }
     }
 
     private void viewBalance(){

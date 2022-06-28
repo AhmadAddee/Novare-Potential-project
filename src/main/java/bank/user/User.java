@@ -9,7 +9,7 @@ public class User {
 
     int balance;
 
-    public User(String username, String fullName, String password){
+    protected User(String username, String fullName, String password){
         this.username = username;
         this.fullName = fullName;
         this.password = new Password(password);
@@ -24,7 +24,9 @@ public class User {
      * @return True if successful, False if the balance < amount
      */
     protected boolean withdraw(int amount){
-        //TODO: Check for negative numbers
+        if(amount > this.balance)
+            return false;
+
         this.balance -= amount;
         return true;
     }
@@ -36,7 +38,9 @@ public class User {
      * @return True if successful. False if an illegal format of amount was used.
      */
     protected  boolean deposit(int amount){
-        //TODO: Check so only positive numbers are applied
+        if(amount <= 0)
+            return false;
+
         this.balance += amount;
         return true;
     }
@@ -48,8 +52,10 @@ public class User {
      * @param receiver The user that will recive the money.
      * @return True if successful. False if the amount is negative.
      */
-    protected  boolean transfer(int amount, User receiver){
-        //TODO:Add check for amount...
+    protected boolean transfer(int amount, User receiver){
+        if(amount < 0 || this.balance < 0)
+            return false;
+
         this.balance -= amount;
         receiver.balance += amount;
 
