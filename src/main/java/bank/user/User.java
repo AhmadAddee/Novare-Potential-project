@@ -67,8 +67,8 @@ public class User {
         return true;
     }
 
-    public boolean updatePassword(Password newPassword){
-        this.password = newPassword;
+    public boolean updatePassword(String newPassword){
+        this.password = new Password(newPassword);
         return true;
     }
 

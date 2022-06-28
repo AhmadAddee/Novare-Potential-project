@@ -28,7 +28,8 @@ public class Session{
             case '3' -> transfer(this.user);
             case '4' -> viewBalance(this.user);
             case '5' -> updateUsername(this.user);
-            case '6' -> viewProfile(this.user);
+            case '6' -> updatePassword(this.user);
+            case '7' -> viewProfile(this.user);
             case 'h' -> printOptions();
             case 'q' -> done = true;
             default -> invalidOption();

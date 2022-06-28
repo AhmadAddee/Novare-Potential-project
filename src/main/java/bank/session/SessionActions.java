@@ -42,17 +42,16 @@ interface SessionActions {
     }
 
     static void viewProfile(User user){
-        StringBuilder sb = new StringBuilder();
 
-        sb.append("-- Your profile --\n\n")
-                .append("Username : ")
-                .append(user.getUsername())
-                .append("\n")
-                .append("Full name : ")
-                .append(user.getFullName())
-                .append('\n');
+        String sb = "-- Your profile --\n\n" +
+                "Username : " +
+                user.getUsername() +
+                "\n" +
+                "Full name : " +
+                user.getFullName() +
+                '\n';
 
-        System.out.println(sb.toString());
+        System.out.println(sb);
 
         waitForClick();
     }
@@ -74,7 +73,7 @@ interface SessionActions {
 
         int amount = readInt("""
                     You are about to transfer money to another user.
-                    Please enter an amount to transfer: 
+                    Please enter an amount to transfer:
                     """);
 
         handle(
@@ -96,6 +95,19 @@ interface SessionActions {
                 user.updateUsername(name),
                 "Success! Username changed.",
                 "Could not change username. Either the username already exists or the provided username was invalid."
+        );
+
+        waitForClick();
+    }
+
+    static void updatePassword(User user){
+        System.out.print("New password: ");
+        String password = scanner.nextLine();
+
+        handle(
+                user.updatePassword(password),
+                "Success! Password changed.",
+                "Could not change Password."
         );
 
         waitForClick();

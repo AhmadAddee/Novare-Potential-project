@@ -1,6 +1,6 @@
 import bank.Bank;
+import bank.PasswordX2;
 import bank.session.Session;
-
 import java.util.Scanner;
 
 public class Main {
