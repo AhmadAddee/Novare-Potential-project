@@ -1,3 +1,4 @@
+import java.util.Optional;
 import java.util.Scanner;
 
 class PasswordX2 {
@@ -16,8 +17,8 @@ class PasswordX2 {
         return !p1.equals(p2);
     }
 
-    public String getPass() {
-        return p1;
+    public Optional<String> getPass() {
+        return isDifferent()?Optional.empty():Optional.of(p1);
     }
 
 }

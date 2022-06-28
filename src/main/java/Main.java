@@ -1,5 +1,5 @@
 import bank.Bank;
-import bank.Session;
+import bank.user.Session;
 
 import java.util.Scanner;
 
@@ -69,7 +69,9 @@ public class Main {
                 System.out.println("Whoops... you have entered two different passwords");
         } while(r);
 
-        boolean success = bank.signUp(username,fullName,passwordX2.getPass());
+        boolean success =
+                passwordX2.getPass().isPresent() &&
+                bank.signUp(username,fullName,passwordX2.getPass().get());  // <--- Won't run if getPass returns empty
         if(!success)
             return signup(bank);
         else
