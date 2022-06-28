@@ -29,7 +29,8 @@ public class Session {
             case '3' -> BasicOp.transfer(this.user);
             case '4' -> BasicOp.viewBalance(this.user);
             case '5' -> BasicOp.updateUsername(this.user);
-            case '6' -> BasicOp.viewProfile(this.user);
+            case '6' -> BasicOp.updatePassword(this.user);
+            case '7' -> BasicOp.viewProfile(this.user);
             case 'h' -> BasicMsg.printOptions();
             case 'q' -> done = true;
             default -> BasicMsg.invalidOption();
@@ -57,7 +58,8 @@ public class Session {
                     [3] Transfer\s
                     [4] View balance\s
                     [5] Edit username\s
-                    [6] View profile\s
+                    [6] Edit password\s
+                    [7] View profile\s
                     [q] to quit\s
                     [h] for this menu\s
                     """;
@@ -169,7 +171,7 @@ public class Session {
         }
 
         public static void updateUsername(User user){
-            System.out.print("New username");
+            System.out.print("New username: ");
             //TODO: add check for valid username
             String name = scanner.nextLine();
 
@@ -177,6 +179,19 @@ public class Session {
                     user.updateUsername(name),
                     "Success! Username changed.",
                     "Could not change username. Either the username already exists or the provided username was invalid."
+            );
+
+            waitForClick();
+        }
+
+        private static void updatePassword(User user){
+            System.out.print("New password: ");
+            String password = scanner.nextLine();
+
+            handle(
+                    user.updatePassword(password),
+                    "Success! Password changed.",
+                    "Could not change Password."
             );
 
             waitForClick();
@@ -191,6 +206,7 @@ public class Session {
             String msg = result?onSuccess:onError;
             System.out.println(msg);
         }
+
     }
 
     private static class util{

@@ -1,4 +1,5 @@
 import bank.Bank;
+import bank.PasswordX2;
 import bank.Session;
 
 import java.util.Scanner;
@@ -8,35 +9,37 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        printBanner();
-        Bank b = new Bank();
+        while(true) {
+            printBanner();
+            Bank b = new Bank();
 
-        System.out.println("""
+            System.out.println("""
                 [1] Login
                 [2] Sign up
                 """);
 
-        System.out.print("Option: ");
+            System.out.print("Option: ");
 
-        //TODO Add check for out of bound option selection
-        int option = scanner.nextInt();
-        scanner.nextLine(); // <--- Dummy scan to reset the cursor after reading an int.
+            //TODO Add check for out of bound option selection
+            int option = scanner.nextInt();
+            scanner.nextLine(); // <--- Dummy scan to reset the cursor after reading an int.
 
-        Session s = null;
+            Session s = null;
 
-        if(option == 1){
-            s = login(b);
-        } else if (option == 2){
-            s = signup(b);
-        }
+            if(option == 1){
+                s = login(b);
+            } else if (option == 2){
+                s = signup(b);
+            }
 
 
-        //TODO fix handling of invalid session
-        assert s != null;
-        s.first();
+            //TODO fix handling of invalid session
+            assert s != null;
+            s.first();
 
-        while (!s.isDone()) {
-            s.loop();
+            while (!s.isDone()) {
+                s.loop();
+            }
         }
     }
 
