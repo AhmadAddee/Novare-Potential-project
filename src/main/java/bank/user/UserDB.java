@@ -34,16 +34,13 @@ public class UserDB {
     }
 
     public void createUser(String username,String fullName, String password){
-        User u = new User(username,fullName,password);
-        addUser(u);
-    }
+        assert !this.containsUser(username);
 
-    private void addUser(User user){
-        assert !this.containsUser(user.getUsername());
-
+        User user = new User(username,fullName,password);
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
     }
+
 
     public boolean containsUser(String username){
         return usernameToUser.containsKey(username);
@@ -61,7 +58,8 @@ public class UserDB {
         };
 
         for (User user: users) {
-            addUser(user);
+            idToUser.put(idToUser.size(), user);
+            usernameToUser.put(user.getUsername(),user);
         }
     }
 }
