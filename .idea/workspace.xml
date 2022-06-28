@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -52,7 +59,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="small_cleanup" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

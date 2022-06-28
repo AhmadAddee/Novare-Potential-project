@@ -1,10 +1,11 @@
 package bank;
+import bank.session.Session;
 import bank.user.*;
 import java.util.Optional;
 
 public class Bank {
 
-    private final UserDB userDB = UserDB.getInstnace();
+    private final UserDB userDB = UserDB.getInstance();
 
     /**
      * A method for signing in to the system

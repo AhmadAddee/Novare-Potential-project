@@ -5,15 +5,15 @@ import java.util.Optional;
 
 public class UserDB {
 
-    private static UserDB instnace;
+    private static UserDB SINGLETON_INSTANCE;
 
     private final HashMap<Integer, User> idToUser = new HashMap<>();
     private final HashMap<String, User> usernameToUser = new HashMap<>();
 
-    public static UserDB getInstnace(){
-        if(UserDB.instnace == null)
-            instnace = new UserDB();
-        return UserDB.instnace;
+    public static UserDB getInstance(){
+        if(UserDB.SINGLETON_INSTANCE == null)
+            SINGLETON_INSTANCE = new UserDB();
+        return UserDB.SINGLETON_INSTANCE;
     }
 
     private UserDB() {
@@ -34,16 +34,13 @@ public class UserDB {
     }
 
     public void createUser(String username,String fullName, String password){
-        User u = new User(username,fullName,password);
-        addUser(u);
-    }
+        assert !this.containsUser(username);
 
-    private void addUser(User user){
-        assert !this.containsUser(user.getUsername());
-
+        User user = new User(username,fullName,password);
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
     }
+
 
     public boolean containsUser(String username){
         return usernameToUser.containsKey(username);
@@ -61,7 +58,8 @@ public class UserDB {
         };
 
         for (User user: users) {
-            addUser(user);
+            idToUser.put(idToUser.size(), user);
+            usernameToUser.put(user.getUsername(),user);
         }
     }
 }

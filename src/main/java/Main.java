@@ -1,5 +1,5 @@
 import bank.Bank;
-import bank.Session;
+import bank.session.Session;
 
 import java.util.Scanner;
 
