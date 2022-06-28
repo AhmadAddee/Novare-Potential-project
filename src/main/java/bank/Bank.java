@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public class Bank {
 
-    private final UserDB userDB = new UserDB();
+    private final UserDB userDB = UserDB.getInstnace();
 
     /**
      * A method for signing in to the system
@@ -33,8 +33,7 @@ public class Bank {
         if(usernameAlreadyExists)
             return false;
 
-        User user = new User(username,fullName,password);
-        userDB.addUser(user);
+        userDB.createUser(username,fullName,password);
 
         return true;
     }

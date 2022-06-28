@@ -1,5 +1,5 @@
 import bank.Bank;
-import bank.user.Session;
+import bank.Session;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class Main {
         assert s != null;
         s.first();
 
-        while (s.isDone()) {
+        while (!s.isDone()) {
             s.loop();
         }
     }

@@ -4,10 +4,19 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class UserDB {
+
+    private static UserDB instnace;
+
     private final HashMap<Integer, User> idToUser = new HashMap<>();
     private final HashMap<String, User> usernameToUser = new HashMap<>();
 
-    public UserDB() {
+    public static UserDB getInstnace(){
+        if(UserDB.instnace == null)
+            instnace = new UserDB();
+        return UserDB.instnace;
+    }
+
+    private UserDB() {
         initMockupUsers();
     }
 
@@ -24,13 +33,24 @@ public class UserDB {
         return Optional.ofNullable(usernameToUser.get(username));
     }
 
-    public void addUser(User user){
+    public void createUser(String username,String fullName, String password){
+        User u = new User(username,fullName,password);
+        addUser(u);
+    }
+
+    private void addUser(User user){
+        assert !this.containsUser(user.getUsername());
+
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
     }
 
     public boolean containsUser(String username){
         return usernameToUser.containsKey(username);
+    }
+
+    public int getNumberOfUsers(){
+        return this.idToUser.size();
     }
 
     private void initMockupUsers(){

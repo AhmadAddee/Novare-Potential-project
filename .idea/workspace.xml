@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Fixed so users can now sign up and sign in with passwords in the bank">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PasswordX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PasswordX2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/PasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/PasswordTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +52,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="4-user-sign-upin" />
+        <entry key="$PROJECT_DIR$" value="small_cleanup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,7 +87,7 @@
       <recent name="bank" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PasswordTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATMInteface.main" />
@@ -103,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BankTest.signInWrongUsernameAndPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BankTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -116,53 +108,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;bank.BankTest.signInWrongUsernameAndPassword&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BankTest.signUpAndIn" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;bank.BankTest.signUpAndIn&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="BankTest.signUpUserAlreadyExisting" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;bank.BankTest.signUpUserAlreadyExisting&quot;" />
+            <option value="&quot;bank.BankTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -195,13 +141,57 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'ATMInteface.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.withdraw" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;bank.user.UserTest.withdraw&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BankTest" />
+        <item itemvalue="Gradle.UserTest.withdraw" />
         <item itemvalue="Gradle.PasswordTest" />
+        <item itemvalue="Gradle.Tests in 'ATMInteface.test'" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.BankTest.signUpAndIn" />
-        <item itemvalue="Gradle.BankTest.signUpUserAlreadyExisting" />
-        <item itemvalue="Gradle.BankTest.signInWrongUsernameAndPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +239,35 @@
       <option name="project" value="LOCAL" />
       <updated>1656337291350</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java">
+      <created>1656401455227</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656401455227</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a withdraw method for the session object">
+      <created>1656402758565</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656402758565</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cleaned up">
+      <created>1656404743997</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656404743997</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods">
+      <created>1656411466400</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656411466400</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +286,10 @@
     <MESSAGE value="Created a framework for the project. I will use this base to further plan and expand upon" />
     <MESSAGE value="Created a password class that stores the password as a SHA256 hash" />
     <MESSAGE value="Fixed so users can now sign up and sign in with passwords in the bank" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed so users can now sign up and sign in with passwords in the bank" />
+    <MESSAGE value="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java" />
+    <MESSAGE value="Added a withdraw method for the session object" />
+    <MESSAGE value="Cleaned up" />
+    <MESSAGE value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
   </component>
 </project>
