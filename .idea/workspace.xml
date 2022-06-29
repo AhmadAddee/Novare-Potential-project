@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Added javadoc to most methods">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Small refactor. Removed unnecessary method">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,6 +85,7 @@
       <recent name="" />
     </key>
     <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="bank.user" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -341,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656511791490</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Small refactor. Removed unnecessary method">
+      <created>1656512577514</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1656512577514</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,7 +385,8 @@
     <MESSAGE value="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action" />
     <MESSAGE value="Added signout method for session" />
     <MESSAGE value="Added javadoc to most methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadoc to most methods" />
+    <MESSAGE value="Small refactor. Removed unnecessary method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small refactor. Removed unnecessary method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

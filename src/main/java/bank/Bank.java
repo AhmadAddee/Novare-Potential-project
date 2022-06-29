@@ -79,7 +79,7 @@ public class Bank {
      * @param session The session of which is trying to perform a transaction.
      * @return An object with options and actions which the user can perform.
      */
-    public UserDB.UserQuery performAction(Session session) {
+    public UserQuery performAction(Session session) {
         String username = sessionUsernameMapping.get(session);
         return userDB.performActionOn(username);
     }
