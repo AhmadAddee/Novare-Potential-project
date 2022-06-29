@@ -1,106 +1,109 @@
 import bank.Bank;
 import bank.PasswordX2;
 import bank.session.Session;
+
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
+    private static final Bank bank = new Bank();
 
     public static void main(String[] args){
-        printBanner();
-        Bank b = new Bank();
+        TerminalIO.printBanner();
 
+        //noinspection StatementWithEmptyBody
+        while(menu());
+
+        System.out.println("Bye.");
+    }
+
+
+    private static boolean menu(){
+        boolean quit = false;
         System.out.println("""
+                -----   Login Menu  -----
                 [1] Login
                 [2] Sign up
+                [q] Quit
                 """);
 
         System.out.print("Option: ");
 
-        //TODO Add check for out of bound option selection
-        int option = scanner.nextInt();
-        scanner.nextLine(); // <--- Dummy scan to reset the cursor after reading an int.
+        char userInput = TerminalIO.readOption();
+        Optional<Session> session = Optional.empty();
 
-        Session s = null;
-
-        if(option == 1){
-            s = login(b);
-        } else if (option == 2){
-            s = signup(b);
+        switch (userInput){
+            case '1' -> session = login();
+            case '2' -> session = signup();
+            case 'q' -> quit = true;
+            default -> System.out.println("Whoops. Invalid option!");
         }
 
-
-        //TODO fix handling of invalid session
-        assert s != null;
-        s.first();
-
-
-
-
-        while (!s.isDone()) {
-            s.loop();
+        while (session.isPresent() && !session.get().isDone()){
+            session.get().loop();
         }
 
+        return !quit;
     }
 
-    private static Session login(Bank bank){
-        System.out.println("-- Login");
+    private static Optional<Session> login(){
+        System.out.println("-- Login --");
 
-        String username = getUsername();
-        String password = getPassword();
+        String username = TerminalIO.getUsername();
+        String password = TerminalIO.getPassword();
 
-        var session = bank.signIn(username, password);
-
-        if(session.isEmpty())
-            return login(bank);
-
-        return session.get();
+        return bank.signIn(username, password);
     }
 
-    private static Session signup(Bank bank){
-        System.out.println("-- Sign up");
+    private static Optional<Session> signup(){
+        System.out.println("-- Sign up --");
 
-        String username = getUsername();
-        String fullName = getFullName();
-        PasswordX2 passwordX2;
+        String username = TerminalIO.getUsername();
+        String fullName = TerminalIO.getFullName();
+        PasswordX2 passwordX2 = new PasswordX2();
 
-        boolean r;
-        do {
-            passwordX2 = new PasswordX2(scanner);
-            r = passwordX2.isDifferent();
-            if(r)
-                System.out.println("Whoops... you have entered two different passwords");
-        } while(r);
+        var passwd = passwordX2.getPass();
+        if(passwd.isEmpty()){
+            System.out.println("Whoops... either the password was invalid or you have entered two different passwords");
+            return Optional.empty();
+        }
 
-        boolean success =
-                passwordX2.getPass().isPresent() &&
-                bank.signUp(username,fullName,passwordX2.getPass().get());  // <--- Won't run if getPass returns empty
-        if(!success)
-            return signup(bank);
-        else
-            return login(bank);
+        boolean success = bank.signUp(username,fullName,passwd.get());
+
+        if(!success){
+            System.out.println("Whoops... could not create user");
+            return Optional.empty();
+        }
+
+        System.out.println("Account created. Please login");
+        return login();
     }
 
-    private static String getUsername() {
-        System.out.print("Username: ");
-        return scanner.nextLine();
-    }
 
-    private static String getFullName(){
-        System.out.print("Full name: ");
-        return scanner.nextLine();
-    }
+    private static class TerminalIO {
+        public static String getUsername() {
+            System.out.print("Username: ");
+            return scanner.nextLine();
+        }
 
-    private static String getPassword() {
-        //TODO Hide the password so it is not printed to the CLI.
+        public static String getFullName(){
+            System.out.print("Full name: ");
+            return scanner.nextLine();
+        }
 
-        System.out.print("Password: ");
-        return scanner.nextLine();
-    }
+        public static String getPassword() {
+            System.out.print("Password: ");
+            return scanner.nextLine();
+        }
 
-    private static void printBanner() {
-        String banner = """
+        public static char readOption(){
+            return scanner.nextLine().charAt(0);
+        }
+
+        public static void printBanner() {
+            String banner = """
                  ________  _________  _____ ______           ________  ________  ________      \s
                 |\\   __  \\|\\___   ___\\\\   _ \\  _   \\        |\\   __  \\|\\   __  \\|\\   __  \\     \s
                 \\ \\  \\|\\  \\|___ \\  \\_\\ \\  \\\\\\__\\ \\  \\       \\ \\  \\|\\  \\ \\  \\|\\  \\ \\  \\|\\  \\    \s
@@ -111,8 +114,12 @@ public class Main {
                                                                                                \s
                 """;
 
-        System.out.println(banner);
+            System.out.println(banner);
+        }
     }
+
+
+
 
 
 }
