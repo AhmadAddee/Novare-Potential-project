@@ -80,6 +80,7 @@ interface SessionUtil {
 
     static void waitForClick(){
         System.out.println("Operation done. Click enter to continue...");
+        scanner.nextLine(); // Clear buffer first.
         scanner.nextLine();
     }
 

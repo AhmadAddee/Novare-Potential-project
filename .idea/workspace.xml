@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Merged">
-      <change afterPath="$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +89,14 @@
       <recent name="bank" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.UserDBTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ATMInteface.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserDBTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -162,29 +166,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserDBTest.get" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;bank.user.UserDBTest.get&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="UserDBTest.test3ContainsUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -210,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.UserDBTest" />
         <item itemvalue="Gradle.UserDBTest.test3ContainsUser" />
         <item itemvalue="Gradle.UserDBTest.containsUser" />
         <item itemvalue="Gradle.UserDBTest.createUser" />
-        <item itemvalue="Gradle.UserDBTest.get" />
       </list>
     </recent_temporary>
   </component>
