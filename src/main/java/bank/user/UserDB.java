@@ -155,10 +155,6 @@ public class UserDB {
                 receiver = Optional.ofNullable(usernameToUser.get(usernameOrId));
             }
 
-            return transfer(amount, receiver);
-        }
-
-        private boolean transfer(int amount, @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<User> receiver){
             return user.isPresent()
                     && receiver.isPresent()
                     && user.get().transfer(amount,receiver.get());
