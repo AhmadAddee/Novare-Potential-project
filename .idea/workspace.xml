@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Reduced coupeling between the userpackage and session">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/BankTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656504650131</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action">
+      <created>1656507727389</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1656507727389</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,7 +360,8 @@
     <MESSAGE value="Cleaned up Main.java" />
     <MESSAGE value="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted." />
     <MESSAGE value="Reduced coupeling between the userpackage and session" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reduced coupeling between the userpackage and session" />
+    <MESSAGE value="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

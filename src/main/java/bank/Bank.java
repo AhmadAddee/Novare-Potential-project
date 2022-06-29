@@ -54,6 +54,10 @@ public class Bank {
         return true;
     }
 
+    public void signout(Session session){
+        sessionUsernameMapping.remove(session);
+    }
+
     public String getUserIdMapping(){
         StringBuilder sb = new StringBuilder();
 

@@ -31,7 +31,10 @@ public class Session{
             case '6' -> updatePassword(bank,this);
             case '7' -> viewProfile(bank,this);
             case 'h' -> printOptions();
-            case 'q' -> done = true;
+            case 'q' -> {
+                done = true;
+                bank.signout(this);
+            }
             default -> invalidOption();
         }
     }
