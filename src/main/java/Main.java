@@ -35,9 +35,13 @@ public class Main {
         assert s != null;
         s.first();
 
+
+
+
         while (!s.isDone()) {
             s.loop();
         }
+
     }
 
     private static Session login(Bank bank){

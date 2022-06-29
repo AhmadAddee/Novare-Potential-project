@@ -32,8 +32,8 @@ interface SessionUtil {
     static void printWelcome(User user) {
         String welcome =
                 "\n" +
-                        "Welcome " + user.getFullName() +
-                        "\n";
+                "Welcome " + user.getFullName() +
+                "\n";
         System.out.println(welcome);
     }
 
@@ -45,7 +45,8 @@ interface SessionUtil {
                 [3] Transfer\s
                 [4] View balance\s
                 [5] Edit username\s
-                [6] View profile\s
+                [6] Edit password\s
+                [7] View profile\s
                 [q] to quit\s
                 [h] for this menu\s
                 """;

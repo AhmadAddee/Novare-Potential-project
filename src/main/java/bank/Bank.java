@@ -16,10 +16,10 @@ public class Bank {
     public Optional<Session> signIn(String username, String password) {
         Optional<User> user = userDB.get(username);
 
-        if(user.isPresent() && user.get().checkPassword(password))
-            return Optional.of(new Session(user.get()));
+        if(user.isEmpty() || !user.get().checkPassword(password))
+            return Optional.empty();
 
-        return Optional.empty();
+        return Optional.of(new Session(user.get()));
     }
 
     /**
