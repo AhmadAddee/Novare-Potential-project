@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 import static bank.session.SessionUtil.*;
 
+/**
+ * An interface containing the operations which can be performed by a user in a session.
+ */
 interface SessionActions {
 
 

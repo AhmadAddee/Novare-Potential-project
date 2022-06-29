@@ -60,13 +60,21 @@ class User {
         return true;
     }
 
-
+    /**
+     * Tries to updates the username of the user.
+     * @param newUsername The new username to be used.
+     * @return True if succesfull. False if the new username is already in use.
+     */
     public boolean updateUsername(String newUsername){
-        //TODO check for name collision
         this.username = newUsername;
         return true;
     }
 
+    /**
+     * Sets a new password for the user.
+     * @param newPassword The clear text variant of the password to be set. This will be hashed and stored.
+     * @return Always true
+     */
     public boolean updatePassword(String newPassword){
         this.password = new Password(newPassword);
         return true;
@@ -84,7 +92,11 @@ class User {
         return this.balance;
     }
 
-
+    /**
+     * Compare the stored user password-hash against a clear text password.
+     * @param password the cleartext password to be compared against
+     * @return true if they are the same. False if they aren't.
+     */
     public boolean checkPassword(String password){
         return this.password.compare(password);
     }

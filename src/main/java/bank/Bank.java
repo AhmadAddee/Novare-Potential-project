@@ -45,15 +45,14 @@ public class Bank {
      * @return True if the user was added to the system. False if username is already in use.
      */
     public boolean signUp(String username, String fullName, String password){
-        boolean usernameAlreadyExists = userDB.containsUser(username);
-        if(usernameAlreadyExists)
-            return false;
-
-        userDB.createUser(username,fullName,password);
-
-        return true;
+        return userDB.createUser(username,fullName,password);
     }
 
+    /**
+     * Removes the session object from storage.
+     * The session object cannot longer be used.
+     * @param session Session to be logout
+     */
     public void signout(Session session){
         sessionUsernameMapping.remove(session);
     }
@@ -75,6 +74,11 @@ public class Bank {
         return sb.toString();
     }
 
+    /**
+     * A user can interact with the bank app through this method.
+     * @param session The session of which is trying to perform a transaction.
+     * @return An object with options and actions which the user can perform.
+     */
     public UserDB.UserQuery performAction(Session session) {
         String username = sessionUsernameMapping.get(session);
         return userDB.performActionOn(username);

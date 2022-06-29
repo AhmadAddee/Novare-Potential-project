@@ -4,11 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Added signout method for session">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bank/user/PasswordTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/PasswordTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,7 +336,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656507727389</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added signout method for session">
+      <created>1656509342030</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656509342030</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -361,7 +374,8 @@
     <MESSAGE value="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted." />
     <MESSAGE value="Reduced coupeling between the userpackage and session" />
     <MESSAGE value="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug related to scanners&#10;&#10;Found out that using the same scanner object in multiple places was a bad idea...&#10;&#10;Since if we have multiple(live) scanners, they will still record input etc so when we come to use that scanner again it will already have stuff in it... Therefor it is much better to create a new scanner object before each user input action" />
+    <MESSAGE value="Added signout method for session" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added signout method for session" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,7 +402,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java</url>
-          <line>10</line>
+          <line>13</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

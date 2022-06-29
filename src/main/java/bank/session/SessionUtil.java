@@ -5,6 +5,9 @@ import bank.Bank;
 import java.util.Optional;
 import java.util.Scanner;
 
+/**
+ * An interface containing helper methods for basic IO operations in the session object.
+ */
 interface SessionUtil {
     static Optional<Integer> readInt(String message){
         Scanner scanner = new Scanner(System.in);

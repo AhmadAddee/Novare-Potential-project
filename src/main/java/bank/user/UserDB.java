@@ -5,25 +5,28 @@ import java.util.Optional;
 
 public class UserDB {
 
-    private static UserDB SINGLETON_INSTANCE;
+    private final static UserDB SINGLETON_INSTANCE = new UserDB();
 
     private final HashMap<Integer, User> idToUser = new HashMap<>();
     private final HashMap<String, User> usernameToUser = new HashMap<>();
 
+    /**
+     * A method for getting the UserDB SINGLETON.
+     * @return The UserDB SINGLETON
+     */
     public static UserDB getInstance(){
-        if(UserDB.SINGLETON_INSTANCE == null){
-            SINGLETON_INSTANCE = new UserDB();
-            SINGLETON_INSTANCE.initMockupUsers();
-        }
         return UserDB.SINGLETON_INSTANCE;
     }
 
-    private UserDB(){}
+    private UserDB(){
+        SINGLETON_INSTANCE.initMockupUsers();
+    }
 
+    /**
+     * Method for testing
+     */
     protected static UserDB createMockup() {
-        UserDB udb = new UserDB();
-        udb.initMockupUsers();
-        return udb;
+        return new UserDB();
     }
 
     /**
@@ -39,23 +42,42 @@ public class UserDB {
         return Optional.ofNullable(usernameToUser.get(username));
     }
 
-    public void createUser(String username,String fullName, String password){
-        assert !this.containsUser(username);
+    /**
+     * Method for creating a new user
+     * @return True if succesfull, false if username is already in use.
+     */
+    public boolean createUser(String username,String fullName, String password){
+        if(this.containsUser(username))
+            return false;
 
+        assert !this.containsUser(username);
         User user = new User(username,fullName,password);
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
+        return true;
     }
 
 
+    /**
+     * Check whether the username is already in use.
+     * @param username The username to compare against the DB
+     * @return True if there is a already a user with that username.
+     */
     public boolean containsUser(String username){
         return usernameToUser.containsKey(username);
     }
 
+    /**
+     * @return number of users in the DB.
+     */
     public int getNumberOfUsers(){
         return this.idToUser.size();
     }
 
+    /**
+     * Method for testing.
+     * Used to create users.
+     */
     private void initMockupUsers(){
         User[] users = {
                 new User("adam","Adam Bower","1234"),
@@ -69,14 +91,32 @@ public class UserDB {
         }
     }
 
+    /**
+     * A method for manipulating the UserDB object.
+     * An object is returned with options which can be performed.
+     * @param username The username of the user trying to manipulate the DB
+     * @return An object with access methods to manipulate the UserDB
+     */
     public UserQuery performActionOn(String username){
         return new UserQuery(username);
     }
+
+    /**
+     * A method for manipulating the UserDB object.
+     * An object is returned with options which can be performed.
+     * @param userID The user id of the user trying to manipulate the DB
+     * @return An object with access methods to manipulate the UserDB
+     */
     public UserQuery performActionOn(int userID){
         return new UserQuery(userID);
     }
 
 
+    /**
+     * A class containing methods for manipulating the UserDB.
+     * Most methods are only wrapping methods and functionality of the underlying User class.
+     * This is to reduce coupling
+     */
     public class UserQuery {
 
         @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
@@ -98,23 +138,24 @@ public class UserDB {
             return user.isPresent() && user.get().deposit(amount);
         }
 
-        private boolean transfer(int amount, String receiverUsername){
-            var receiver = Optional.ofNullable(usernameToUser.get(receiverUsername));
-            return transfer(amount, receiver);
-        }
-
+        /**
+         * Performs a transfer transaction.
+         * @param amount Amount to be transferred
+         * @param usernameOrId A string with either the username or id of the recipient.
+         * @return True if successful, false otherwise.
+         */
         public boolean transferSelfMatch(int amount, String usernameOrId){
+            Optional<User> receiver;
+
             try {
                 int id = Integer.parseInt(usernameOrId);
-                return transfer(amount,id);
+                receiver = Optional.ofNullable(idToUser.get(id));
             }catch (NumberFormatException e) {
-                return transfer(amount,usernameOrId);
+                // Couldn't parse input as int, then assume the input to be a username.
+                receiver = Optional.ofNullable(usernameToUser.get(usernameOrId));
             }
-        }
 
-        private boolean transfer(int amount, int receiverUserID){
-            var receiver = Optional.ofNullable(idToUser.get(receiverUserID));
-            return transfer(amount,receiver);
+            return transfer(amount, receiver);
         }
 
         private boolean transfer(int amount, @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<User> receiver){
@@ -122,7 +163,6 @@ public class UserDB {
                     && receiver.isPresent()
                     && user.get().transfer(amount,receiver.get());
         }
-
 
         public boolean updateUsername(String newUsername){
             boolean alreadyExists = usernameToUser.containsKey(newUsername);

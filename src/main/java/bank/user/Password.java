@@ -10,20 +10,27 @@ class Password {
     private final Integer salt;
     private final byte[] hash;
 
+
     public Password(String clearText) {
         Random rand = new Random();
         this.salt = rand.nextInt();
         this.hash = getSHA256(clearText,salt);
     }
 
-    public Password(String clearText, Integer salt){
+    protected Password(String clearText, Integer salt){
         this.salt = salt;
         this.hash = getSHA256(clearText, salt);
     }
 
-    private byte[] getSHA256(String clearPassword, Integer salt){
+    /**
+     * Generates a SHA256 hash of a clear text String, in this case a password.
+     * @param clearPassword The clear text password we want to generate a hash from.
+     * @param salt The salt which is to be used.
+     * @return The password hash.
+     */
+    private static byte[] getSHA256(String clearPassword, Integer salt){
 
-        String saltString = this.salt.toString();
+        String saltString = salt.toString();
         String msg = clearPassword + saltString;
 
         try {
@@ -35,6 +42,11 @@ class Password {
         }
     }
 
+    /**
+     * Compares the stored password hash against a cleartext password.
+     * @param clearText The password that we want to check against.
+     * @return True if the passwords are the same, false if they are not.
+     */
     public boolean compare(String clearText){
         byte[] other = getSHA256(clearText,this.salt);
         return Arrays.equals(other,this.hash);
