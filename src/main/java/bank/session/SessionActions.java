@@ -9,17 +9,17 @@ import static bank.session.SessionUtil.*;
 
 interface SessionActions {
 
-    Scanner scanner = new Scanner(System.in);
 
     static void deposit(Bank bank, Session session){
-        int amount = readInt("""
+        var amount = readInt("""
                 You are about to deposit money into your account
                 How much would you like to deposit?""");
 
         handle(
-                bank
+                amount.isPresent()
+                && bank
                         .performAction(session)
-                        .deposit(amount),
+                        .deposit(amount.get()),
                 "Sucess! View your balance to see the change.",
                 "Could not deposit to account. Only positive numbers are allowed"
         );
@@ -28,15 +28,16 @@ interface SessionActions {
     }
 
     static void withdraw(Bank bank, Session session){
-        int amount = readInt("""
+        var amount = readInt("""
                 You are about to withdraw money from your account.
                 How much would you like to withdraw?
                 """);
 
         handle(
-                bank
+                amount.isPresent()
+                && bank
                         .performAction(session)
-                        .withdraw(amount),
+                        .withdraw(amount.get()),
                 "Sucess! You have now withdrawn money from you account. View your balance to see the changes",
                 "Could not process the transaction. Do you have enough funds on your account?"
         );
@@ -53,10 +54,10 @@ interface SessionActions {
 
         String s = "-- Your profile --\n\n" +
                 "Username : " +
-                username +
+                username.get() +
                 "\n" +
                 "Full name : " +
-                fullName +
+                fullName.get() +
                 '\n';
 
         System.out.println(s);
@@ -72,6 +73,7 @@ interface SessionActions {
     }
 
     static void transfer(Bank bank, Session session){
+        Scanner scanner = new Scanner(System.in);
         printUserList();
 
         System.out.print("Enter either a username or the corresponding [id]: ");
@@ -79,15 +81,16 @@ interface SessionActions {
         String receiverIdOrUsername = scanner.nextLine();
 
 
-        int amount = readInt("""
+        var amount = readInt("""
                     You are about to transfer money to another user.
                     Please enter an amount to transfer:
                     """);
 
         handle(
-                bank
+                amount.isPresent()
+                && bank
                         .performAction(session)
-                        .transferSelfMatch(amount, receiverIdOrUsername),
+                        .transferSelfMatch(amount.get(), receiverIdOrUsername),
                 "Success! Money have now been transferred.",
                 "Could not transfer the money."
         );
@@ -96,6 +99,7 @@ interface SessionActions {
     }
 
     static void updateUsername(Bank bank, Session session){
+        Scanner scanner = new Scanner(System.in);
         System.out.print("New username");
         String name = scanner.nextLine();
 
@@ -111,6 +115,7 @@ interface SessionActions {
     }
 
     static void updatePassword(Bank bank, Session session){
+        Scanner scanner = new Scanner(System.in);
         System.out.print("New password: ");
         String password = scanner.nextLine();
 

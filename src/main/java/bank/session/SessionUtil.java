@@ -2,28 +2,24 @@ package bank.session;
 
 import bank.Bank;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 interface SessionUtil {
-    Scanner scanner = new Scanner(System.in);
-
-    static int readInt(String message){
+    static Optional<Integer> readInt(String message){
+        Scanner scanner = new Scanner(System.in);
         System.out.println(message);
-
-        int amount = 0;
-
-        do {
-            System.out.print("Amount: ");
-            if(scanner.hasNextInt())
-                amount = scanner.nextInt();
-            else
-                System.out.println("Please enter a number");
-        }while (amount == 0);
-
-        return amount;
+        String msg = scanner.nextLine();
+        System.out.println(msg);
+        try{
+            return Optional.of(Integer.parseInt(msg));
+        }catch (Exception e) {
+            return Optional.empty();
+        }
     }
 
     static char getOption() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Option: ");
         return scanner.next().charAt(0);
     }
@@ -66,8 +62,8 @@ interface SessionUtil {
     }
 
     static void waitForClick(){
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Operation done. Click enter to continue...");
-        scanner.nextLine(); // Clear buffer first.
         scanner.nextLine();
     }
 

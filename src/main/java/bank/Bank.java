@@ -13,7 +13,7 @@ public class Bank {
     //But this is used to visually-"emulate" the possibility of multiple active sessions at the same time.
     private final HashMap<Session, String> sessionUsernameMapping = new HashMap<>();
 
-    private Bank(){}
+    protected Bank(){}
 
     public static Bank getInstance(){
         return bank;

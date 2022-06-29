@@ -11,13 +11,19 @@ public class UserDB {
     private final HashMap<String, User> usernameToUser = new HashMap<>();
 
     public static UserDB getInstance(){
-        if(UserDB.SINGLETON_INSTANCE == null)
+        if(UserDB.SINGLETON_INSTANCE == null){
             SINGLETON_INSTANCE = new UserDB();
+            SINGLETON_INSTANCE.initMockupUsers();
+        }
         return UserDB.SINGLETON_INSTANCE;
     }
 
-    private UserDB() {
-        initMockupUsers();
+    private UserDB(){}
+
+    protected static UserDB createMockup() {
+        UserDB udb = new UserDB();
+        udb.initMockupUsers();
+        return udb;
     }
 
     /**
