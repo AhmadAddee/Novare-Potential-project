@@ -1,7 +1,6 @@
 package bank.session;
 
-import bank.user.User;
-import bank.user.UserDB;
+import bank.Bank;
 
 import java.util.Scanner;
 
@@ -29,10 +28,13 @@ interface SessionUtil {
         return scanner.next().charAt(0);
     }
 
-    static void printWelcome(User user) {
+    static void printWelcome(Session session, Bank bank) {
+        var fullName = bank.performAction(session).getFullName();
+        assert fullName.isPresent();
+
         String welcome =
                 "\n" +
-                "Welcome " + user.getFullName() +
+                "Welcome " + fullName.get() +
                 "\n";
         System.out.println(welcome);
     }
@@ -59,27 +61,12 @@ interface SessionUtil {
     }
 
     static void printUserList(){
-        final UserDB userDB = UserDB.getInstance();
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = 0; i < userDB.getNumberOfUsers(); i++) {
-            var tmpUser = userDB.get(i);
-            assert tmpUser.isPresent();
-
-            String username = tmpUser.get().getUsername();
-
-            sb.append("[")
-                    .append(i)
-                    .append("] ")
-                    .append(username)
-                    .append("\n");
-        }
-
-        System.out.println(sb.toString());
+        String userIdMapping = Bank.getInstance().getUserIdMapping();
+        System.out.println(userIdMapping);
     }
 
     static void waitForClick(){
-        System.out.println("Operation done. Click enter to continue...");
+        System.out.print("Operation done. Click enter to continue...");
         scanner.nextLine(); // Clear buffer first.
         scanner.nextLine();
     }

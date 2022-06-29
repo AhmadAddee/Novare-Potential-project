@@ -1,6 +1,6 @@
 package bank.user;
 
-public class User {
+class User {
     private String username;
     private final String fullName;
     private Password password;

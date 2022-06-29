@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Password {
+class Password {
 
     private final Integer salt;
     private final byte[] hash;

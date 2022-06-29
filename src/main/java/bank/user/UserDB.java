@@ -62,4 +62,94 @@ public class UserDB {
             usernameToUser.put(user.getUsername(),user);
         }
     }
+
+    public UserQuery performActionOn(String username){
+        return new UserQuery(username);
+    }
+    public UserQuery performActionOn(int userID){
+        return new UserQuery(userID);
+    }
+
+
+    public class UserQuery {
+
+        @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+        private final Optional<User> user;
+
+        protected UserQuery(String username){
+            user = Optional.ofNullable(usernameToUser.get(username));
+        }
+
+        protected UserQuery(int userID) {
+            user = Optional.ofNullable(idToUser.get(userID));
+        }
+
+        public boolean withdraw(int amount){
+            return user.isPresent() && user.get().withdraw(amount);
+        }
+
+        public boolean deposit(int amount){
+            return user.isPresent() && user.get().deposit(amount);
+        }
+
+        private boolean transfer(int amount, String receiverUsername){
+            var receiver = Optional.ofNullable(usernameToUser.get(receiverUsername));
+            return transfer(amount, receiver);
+        }
+
+        public boolean transferSelfMatch(int amount, String usernameOrId){
+            try {
+                int id = Integer.parseInt(usernameOrId);
+                return transfer(amount,id);
+            }catch (NumberFormatException e) {
+                return transfer(amount,usernameOrId);
+            }
+        }
+
+        private boolean transfer(int amount, int receiverUserID){
+            var receiver = Optional.ofNullable(idToUser.get(receiverUserID));
+            return transfer(amount,receiver);
+        }
+
+        private boolean transfer(int amount, @SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<User> receiver){
+            return user.isPresent()
+                    && receiver.isPresent()
+                    && user.get().transfer(amount,receiver.get());
+        }
+
+
+        public boolean updateUsername(String newUsername){
+            boolean alreadyExists = usernameToUser.containsKey(newUsername);
+            return !alreadyExists
+                    && user.isPresent()
+                    && user.get().updateUsername(newUsername);
+        }
+
+        public boolean updatePassword(String newPassword){
+            return user.isPresent() && user.get().updatePassword(newPassword);
+        }
+
+        public Optional<String> getUsername(){
+            if(user.isEmpty())
+                return Optional.empty();
+            return Optional.of(user.get().getUsername());
+        }
+
+        public Optional<String> getFullName(){
+            if(user.isEmpty())
+                return Optional.empty();
+            return Optional.of(user.get().getFullName());
+        }
+
+        public Optional<Integer> getBalance(){
+            if(user.isEmpty())
+                return Optional.empty();
+            return Optional.of(user.get().getBalance());
+        }
+
+        public boolean checkPassword(String password){
+            return user.isPresent() && user.get().checkPassword(password);
+        }
+
+    }
 }

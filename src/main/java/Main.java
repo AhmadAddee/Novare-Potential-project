@@ -1,5 +1,4 @@
 import bank.Bank;
-import bank.PasswordX2;
 import bank.session.Session;
 
 import java.util.Optional;
@@ -8,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
-    private static final Bank bank = new Bank();
+    private static final Bank bank = Bank.getInstance();
 
     public static void main(String[] args){
         TerminalIO.printBanner();
@@ -36,10 +35,12 @@ public class Main {
 
         switch (userInput){
             case '1' -> session = onFailedWrapped(login());
-            case '2' -> session = onFailedWrapped(signup());
+            case '2' -> session = signup();
             case 'q' -> quit = true;
             default -> System.out.println("Whoops. Invalid option!");
         }
+
+        session.ifPresent(Session::first);
 
         while (session.isPresent() && !session.get().isDone()){
             session.get().loop();
@@ -85,7 +86,7 @@ public class Main {
         }
 
         System.out.println("Account created. Please login");
-        return login();
+        return onFailedWrapped(login());
     }
 
 

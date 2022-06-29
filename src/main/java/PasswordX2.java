@@ -1,5 +1,3 @@
-package bank;
-
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -11,7 +9,7 @@ import java.util.Scanner;
  *  password:   asd
  *  re-type password:   asd
  */
-public class PasswordX2 {
+class PasswordX2 {
     private final String p1, p2;
 
     /**

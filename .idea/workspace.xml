@@ -4,9 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Cleaned up Main.java">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted.">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/PasswordX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PasswordX2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,13 +77,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "corretto-17"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -306,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656493482826</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted.">
+      <created>1656494008072</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656494008072</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,6 +352,7 @@
     <MESSAGE value="Merged" />
     <MESSAGE value="There seems to be a bug in the program such that it doesnt wait for user input in the waitForClick method. Tmp solution is to just scann the terminal twice" />
     <MESSAGE value="Cleaned up Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up Main.java" />
+    <MESSAGE value="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrapped login and signup so that if the user enters wrong password or username when trying to login, they will now be promted." />
   </component>
 </project>

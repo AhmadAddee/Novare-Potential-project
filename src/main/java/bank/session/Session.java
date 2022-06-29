@@ -1,20 +1,20 @@
 package bank.session;
 
-import bank.user.User;
+import bank.Bank;
 
 import static bank.session.SessionActions.*;
 import static bank.session.SessionUtil.*;
 
 public class Session{
-    private final User user;
+    private final Bank bank;
     private boolean done = false;
 
-    public Session(User user){
-        this.user = user;
+    public Session(Bank bank){
+        this.bank = bank;
     }
 
     public void first() {
-        printWelcome(user);
+        printWelcome(this, bank);
     }
 
     public void loop(){
@@ -23,13 +23,13 @@ public class Session{
         char userInput = getOption();
 
         switch (userInput) {
-            case '1' -> withdraw(this.user);
-            case '2' -> deposit(this.user);
-            case '3' -> transfer(this.user);
-            case '4' -> viewBalance(this.user);
-            case '5' -> updateUsername(this.user);
-            case '6' -> updatePassword(this.user);
-            case '7' -> viewProfile(this.user);
+            case '1' -> withdraw(bank,this);
+            case '2' -> deposit(bank,this);
+            case '3' -> transfer(bank,this);
+            case '4' -> viewBalance(bank,this);
+            case '5' -> updateUsername(bank,this);
+            case '6' -> updatePassword(bank,this);
+            case '7' -> viewProfile(bank,this);
             case 'h' -> printOptions();
             case 'q' -> done = true;
             default -> invalidOption();
