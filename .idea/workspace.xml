@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="There seems to be a bug in the program such that it doesnt wait for user input in the waitForClick method. Tmp solution is to just scann the terminal twice">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Cleaned up Main.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/PasswordX2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/PasswordX2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656490298665</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cleaned up Main.java">
+      <created>1656493482826</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1656493482826</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,6 +333,7 @@
     <MESSAGE value="Made UserDB to a singelton.&#10;Fixed bug for running session loop in Main.java&#10;Added transfer method for session.java&#10;Cleaned up the other session methods" />
     <MESSAGE value="Merged" />
     <MESSAGE value="There seems to be a bug in the program such that it doesnt wait for user input in the waitForClick method. Tmp solution is to just scann the terminal twice" />
-    <option name="LAST_COMMIT_MESSAGE" value="There seems to be a bug in the program such that it doesnt wait for user input in the waitForClick method. Tmp solution is to just scann the terminal twice" />
+    <MESSAGE value="Cleaned up Main.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up Main.java" />
   </component>
 </project>

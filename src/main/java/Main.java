@@ -35,8 +35,8 @@ public class Main {
         Optional<Session> session = Optional.empty();
 
         switch (userInput){
-            case '1' -> session = login();
-            case '2' -> session = signup();
+            case '1' -> session = onFailedWrapped(login());
+            case '2' -> session = onFailedWrapped(signup());
             case 'q' -> quit = true;
             default -> System.out.println("Whoops. Invalid option!");
         }
@@ -46,6 +46,13 @@ public class Main {
         }
 
         return !quit;
+    }
+
+    private static Optional<Session> onFailedWrapped(@SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Session> in){
+        if(in.isEmpty())
+            System.out.println("Login failed. Wrong username or password?");
+
+        return in;
     }
 
     private static Optional<Session> login(){
