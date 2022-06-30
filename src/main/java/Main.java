@@ -9,9 +9,10 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Bank bank = Bank.getInstance();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         TerminalIO.printBanner();
 
+        Thread.sleep(1000);
         //noinspection StatementWithEmptyBody
         while(menu());
 
@@ -19,8 +20,12 @@ public class Main {
     }
 
 
-    private static boolean menu(){
+    private static boolean menu() {
         boolean quit = false;
+
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
         System.out.println("""
                 -----   Login Menu  -----
                 [1] Login
@@ -40,11 +45,13 @@ public class Main {
             default -> System.out.println("Whoops. Invalid option!");
         }
 
-        session.ifPresent(Session::first);
-
-        while (session.isPresent() && !session.get().isDone()){
-            session.get().loop();
-        }
+        session.ifPresent(s -> {
+            s.first();
+            while (s.loop()){
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        });
 
         return !quit;
     }

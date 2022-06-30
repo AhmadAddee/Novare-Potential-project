@@ -25,8 +25,12 @@ public class Session{
 
     /**
      * A method for the main menu. This is meant to be looped in a while-loop until the user is done.
+     * @return returns true when the loop is NOT done.
      */
-    public void loop(){
+    public boolean loop(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
         System.out.println("-----   Main Menu   -----");
         printOptions();
         char userInput = getOption();
@@ -46,6 +50,8 @@ public class Session{
             }
             default -> invalidOption();
         }
+
+        return !done;
     }
 
     /**

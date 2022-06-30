@@ -9,13 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Added check for usernames so a user cannot create a username that contains numbers">
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/user/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,7 @@
       <recent name="bank" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'ATMInteface.test'">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ATMInteface.main" />
@@ -405,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656578101654</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating">
+      <created>1656579921903</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656579921903</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -442,32 +446,7 @@
     <MESSAGE value="Extracted UserQuery to its own class. Also found a fixed a bug where I tried to initMockupUsers on a null object..." />
     <MESSAGE value="Removed unnecessary method" />
     <MESSAGE value="Added check for usernames so a user cannot create a username that contains numbers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added check for usernames so a user cannot create a username that contains numbers" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/bank/user/UserDBTest.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating" />
   </component>
 </project>
