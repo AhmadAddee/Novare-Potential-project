@@ -1,13 +1,15 @@
 # ATMInterface
 A small :dollar:ATM/BANK:dollar: simulation app written in java.
 
+View the release page to download the jar file. Or click [HERE](https://github.com/Novare-Potential/ATMInterface/tags) to download the jar file
+
 Project description/requierments can be found [here](https://docs.google.com/document/d/1iOUQwnx9qJl4euzYNNb8Taq0tCa4gK1a)
 
 The project is fully working.
 
 Todo:
 
-- [ ] Create a release with instructions on how to run the program.
+- [X] Create a release with instructions on how to run the program.
 - [ ] Fix the UML so it reflects how to system is currently working (There have been some changes on how the different classes interact)
 - [ ] Possibly add more tests to get better coverge.
 - [ ] Rewrite some javadoc if neccessary(Some might be unclear)
