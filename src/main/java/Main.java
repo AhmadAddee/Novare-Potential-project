@@ -34,7 +34,7 @@ public class Main {
         Optional<Session> session = Optional.empty();
 
         switch (userInput){
-            case '1' -> session = onFailedWrapped(login());
+            case '1' -> session = login();
             case '2' -> session = signup();
             case 'q' -> quit = true;
             default -> System.out.println("Whoops. Invalid option!");
@@ -49,12 +49,6 @@ public class Main {
         return !quit;
     }
 
-    private static Optional<Session> onFailedWrapped(@SuppressWarnings("OptionalUsedAsFieldOrParameterType") Optional<Session> in){
-        if(in.isEmpty())
-            System.out.println("Login failed. Wrong username or password?");
-
-        return in;
-    }
 
     private static Optional<Session> login(){
         System.out.println("-- Login --");
@@ -62,7 +56,11 @@ public class Main {
         String username = TerminalIO.getUsername();
         String password = TerminalIO.getPassword();
 
-        return bank.signIn(username, password);
+        var session =  bank.login(username, password);
+        if(session.isEmpty())
+            System.out.println("Login failed. Wrong username or password?");
+
+        return session;
     }
 
     private static Optional<Session> signup(){
@@ -86,7 +84,7 @@ public class Main {
         }
 
         System.out.println("Account created. Please login");
-        return onFailedWrapped(login());
+        return login();
     }
 
 

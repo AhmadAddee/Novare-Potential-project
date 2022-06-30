@@ -25,7 +25,7 @@ public class Bank {
      * @param password The password for the user.
      * @return A session object which is used for communicating different operations to the bank. Will return Empty if either username or password was wrong.
      */
-    public Optional<Session> signIn(String username, String password) {
+    public Optional<Session> login(String username, String password) {
         var user = userDB.get(username);
 
         boolean passwordCheck = userDB.performActionOn(username).checkPassword(password);

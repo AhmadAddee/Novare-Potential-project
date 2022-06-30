@@ -9,19 +9,19 @@ class BankTest {
 
     @Test
     void signInCorrectUsernameAndPassword() {
-        var s1 = b.signIn("adam","1234");
+        var s1 = b.login("adam","1234");
         assertTrue(s1.isPresent());
     }
 
     @Test
     void signInCorrectUsernameButWrongPassword(){
-        var s2 = b.signIn("adam","12345");
+        var s2 = b.login("adam","12345");
         assertTrue(s2.isEmpty());
     }
 
     @Test
     void signInWrongUsernameAndPassword(){
-        var s3 = b.signIn("adam123","1234");
+        var s3 = b.login("adam123","1234");
         assertTrue(s3.isEmpty());
     }
 
@@ -36,7 +36,7 @@ class BankTest {
         boolean r = b.signUp("eve","Eve Howler","test");
         assertTrue(r);
 
-        var s = b.signIn("eve","test");
+        var s = b.login("eve","test");
         assertTrue(s.isPresent());
     }
 
