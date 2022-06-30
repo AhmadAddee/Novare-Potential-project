@@ -10,8 +10,8 @@ The project is fully working.
 Todo:
 
 - [X] Create a release with instructions on how to run the program.
-- [ ] Fix the UML so it reflects how to system is currently working (There have been some changes on how the different classes interact)
-- [ ] Possibly add more tests to get better coverge.
+- [X] Fix the UML so it reflects how to system is currently working (There have been some changes on how the different classes interact)
+- [X] Possibly add more tests to get better coverge.
 - [ ] Rewrite some javadoc if neccessary(Some might be unclear)
 - [ ] Touch up this README
 
