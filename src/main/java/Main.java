@@ -64,6 +64,7 @@ public class Main {
         String password = TerminalIO.getPassword();
 
         var session =  bank.login(username, password);
+
         if(session.isEmpty())
             System.out.println("Login failed. Wrong username or password?");
 

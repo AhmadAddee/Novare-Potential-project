@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Terminal now clears after each instruction/change of menu&#10;&#10;Also: simplified a while statement">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" afterDir="false" />
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Complemented some optional statements with stream operations">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656593393884</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Complemented some optional statements with stream operations">
+      <created>1656594241534</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1656594241534</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -454,6 +460,7 @@
     <MESSAGE value="Added check for usernames so a user cannot create a username that contains numbers" />
     <MESSAGE value="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating" />
     <MESSAGE value="Terminal now clears after each instruction/change of menu&#10;&#10;Also: simplified a while statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terminal now clears after each instruction/change of menu&#10;&#10;Also: simplified a while statement" />
+    <MESSAGE value="Complemented some optional statements with stream operations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Complemented some optional statements with stream operations" />
   </component>
 </project>
