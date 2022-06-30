@@ -7,7 +7,9 @@ class User {
 
     int balance;
 
-    protected User(String username, String fullName, String password){
+    protected User(String username, String fullName, String password) throws IllegalArgumentException {
+        if(!validUsername(username))
+            throw new IllegalArgumentException("The username provided contains illegal character");
         this.username = username;
         this.fullName = fullName;
         this.password = new Password(password);
@@ -66,6 +68,8 @@ class User {
      * @return True if succesfull. False if the new username is already in use.
      */
     public boolean updateUsername(String newUsername){
+        if(!validUsername(newUsername))
+            return false;
         this.username = newUsername;
         return true;
     }
@@ -99,6 +103,15 @@ class User {
      */
     public boolean checkPassword(String password){
         return this.password.compare(password);
+    }
+
+    /**
+     * Checks if the username is within specs.
+     * @param username Username to be tested
+     * @return true if the username is valid. False if it contains invalid characters.
+     */
+    public static boolean validUsername(String username){
+        return username.matches("[a-zA-Z]*");
     }
 
 }

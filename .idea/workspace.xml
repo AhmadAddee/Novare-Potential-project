@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Extracted UserQuery to its own class. Also found a fixed a bug where I tried to initMockupUsers on a null object...">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ATMInteface_jar.xml" afterDir="false" />
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Added check for usernames so a user cannot create a username that contains numbers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bank/BankTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/BankTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bank/user/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bank/user/UserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,29 +150,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="UserDBTest.test2Get" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;bank.user.UserDBTest.test2Get&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="UserDBTest.test3ContainsUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,13 +196,43 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="UserTest.validUsername" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;bank.user.UserTest.validUsername&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.UserDBTest" />
+      <item itemvalue="Gradle.UserDBTest.test3ContainsUser" />
+      <item itemvalue="Gradle.UserDBTest.test4GetNumberOfUsers" />
+      <item itemvalue="Gradle.UserTest.validUsername" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserTest.validUsername" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.UserDBTest" />
         <item itemvalue="Gradle.UserDBTest.test4GetNumberOfUsers" />
         <item itemvalue="Gradle.UserDBTest.test3ContainsUser" />
-        <item itemvalue="Gradle.UserDBTest.test2Get" />
       </list>
     </recent_temporary>
   </component>
@@ -385,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656512894619</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Removed unnecessary method">
+      <created>1656575208347</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1656575208347</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -420,7 +434,9 @@
     <MESSAGE value="Added javadoc to most methods" />
     <MESSAGE value="Small refactor. Removed unnecessary method" />
     <MESSAGE value="Extracted UserQuery to its own class. Also found a fixed a bug where I tried to initMockupUsers on a null object..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted UserQuery to its own class. Also found a fixed a bug where I tried to initMockupUsers on a null object..." />
+    <MESSAGE value="Removed unnecessary method" />
+    <MESSAGE value="Added check for usernames so a user cannot create a username that contains numbers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added check for usernames so a user cannot create a username that contains numbers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -47,10 +47,12 @@ public class UserDB {
      * @return True if succesfull, false if username is already in use.
      */
     public boolean createUser(String username,String fullName, String password){
-        if(this.containsUser(username))
+        boolean usernameInUse = this.containsUser(username);
+        boolean invalidUsername = !User.validUsername(username);
+
+        if(usernameInUse || invalidUsername)
             return false;
 
-        assert !this.containsUser(username);
         User user = new User(username,fullName,password);
         idToUser.put(idToUser.size(), user);
         usernameToUser.put(user.getUsername(),user);
@@ -79,16 +81,22 @@ public class UserDB {
      * Used to create users.
      */
     private void initMockupUsers(){
-        User[] users = {
-                new User("adam","Adam Bower","1234"),
-                new User("xX_Adam_Xx","Adam Hunter","4321"),
-                new User("__ADMA__","Adam Cruise","1343")
-        };
+        try {
+            User[] users = {
+                    new User("adam","Adam Bower","1234"),
+                    new User("adamh","Adam Hunter","4321"),
+                    new User("adamc","Adam Cruise","1343")
+            };
 
-        for (User user: users) {
-            idToUser.put(idToUser.size(), user);
-            usernameToUser.put(user.getUsername(),user);
+            for (User user: users) {
+                idToUser.put(idToUser.size(), user);
+                usernameToUser.put(user.getUsername(),user);
+            }
+        }catch (IllegalArgumentException e) {
+            System.out.println("INFO: Could not init mockup users!");
+            System.out.println("INFO: Continuing without mockup users");
         }
+
     }
 
     /**
@@ -110,6 +118,7 @@ public class UserDB {
     public UserQuery performActionOn(int userID){
         return new UserQuery(this, userID);
     }
+
 
 
 }

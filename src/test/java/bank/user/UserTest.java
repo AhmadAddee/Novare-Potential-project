@@ -43,4 +43,39 @@ class UserTest {
         assertEquals(u1.balance, originalBalance1 - 100);
         assertEquals(u2.balance, originalBalance2 + 100);
     }
+
+
+    @Test
+    void updateUsername() {
+    }
+
+    @Test
+    void updatePassword() {
+    }
+
+    @Test
+    void getUsername() {
+    }
+
+    @Test
+    void getFullName() {
+    }
+
+    @Test
+    void getBalance() {
+    }
+
+    @Test
+    void checkPassword() {
+    }
+
+    @Test
+    void validUsername() {
+        String validUsername = "adam";
+        String invalidUsername = "adam1234";
+        String invalidUsername2 = "adam adam adam";
+        assertTrue(User.validUsername(validUsername));
+        assertFalse(User.validUsername(invalidUsername));
+        assertFalse(User.validUsername(invalidUsername2));
+    }
 }
