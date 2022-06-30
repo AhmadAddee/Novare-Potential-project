@@ -58,7 +58,11 @@ public class UserQuery {
         boolean alreadyExists = userDB.containsUser(newUsername);
         return !alreadyExists
                 && user.isPresent()
-                && user.get().updateUsername(newUsername);
+                && user.get().updateUsername(newUsername)
+                && userDB.updateUsername(
+                        this.user.get().getUsername(),
+                        newUsername
+                    );
     }
 
     public boolean updatePassword(String newPassword) {

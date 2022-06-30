@@ -1,6 +1,7 @@
 package bank.user;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Optional;
 
 public class UserDB {
@@ -74,6 +75,13 @@ public class UserDB {
      */
     public int getNumberOfUsers(){
         return this.idToUser.size();
+    }
+
+    protected boolean updateUsername(String previousUsername, String newUsername){
+        User u = usernameToUser.get(previousUsername);
+        usernameToUser.remove(previousUsername);
+
+        return Objects.equals(usernameToUser.put(newUsername, u), u);
     }
 
     /**

@@ -12,8 +12,8 @@ interface SessionUtil {
     static Optional<Integer> readInt(String message){
         Scanner scanner = new Scanner(System.in);
         System.out.println(message);
+        System.out.print("Amount: ");
         String msg = scanner.nextLine();
-        System.out.println(msg);
         try{
             return Optional.of(Integer.parseInt(msg));
         }catch (Exception e) {

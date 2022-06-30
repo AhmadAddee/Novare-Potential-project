@@ -111,7 +111,7 @@ class User {
      * @return true if the username is valid. False if it contains invalid characters.
      */
     public static boolean validUsername(String username){
-        return username.matches("[a-zA-Z]*");
+        return username.matches("[a-zA-Z]*") && !username.isBlank();
     }
 
 }
