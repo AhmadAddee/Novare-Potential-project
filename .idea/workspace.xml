@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Complemented some optional statements with stream operations">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Formated code">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ATMInteface_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ATMInteface_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -421,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656594241534</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Formated code">
+      <created>1656595088762</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1656595088762</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,7 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created project" />
     <MESSAGE value="Created a framework for the project. I will use this base to further plan and expand upon" />
     <MESSAGE value="Created a password class that stores the password as a SHA256 hash" />
     <MESSAGE value="Fixed so users can now sign up and sign in with passwords in the bank" />
@@ -461,6 +468,7 @@
     <MESSAGE value="Bug fixes&#10;&#10;FixedBug: in user.java a user could have a username containing only blank &quot;&quot;&#10;&#10;FixedBug: When logging in after changing a username, the user could login with the new username. This was due to the mapping in UserDB (username -&gt; user) not updating" />
     <MESSAGE value="Terminal now clears after each instruction/change of menu&#10;&#10;Also: simplified a while statement" />
     <MESSAGE value="Complemented some optional statements with stream operations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complemented some optional statements with stream operations" />
+    <MESSAGE value="Formated code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formated code" />
   </component>
 </project>

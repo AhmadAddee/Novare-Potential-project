@@ -103,7 +103,7 @@ interface SessionActions {
 
     static void updateUsername(Bank bank, Session session){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("New username");
+        System.out.print("New username: ");
         String name = scanner.nextLine();
 
         handle(
