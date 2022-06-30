@@ -70,21 +70,24 @@ public class UserQuery {
     }
 
     public Optional<String> getUsername() {
-        if (user.isEmpty())
-            return Optional.empty();
-        return Optional.of(user.get().getUsername());
+        return user
+                .stream()
+                .map(User::getUsername)
+                .findFirst();
     }
 
     public Optional<String> getFullName() {
-        if (user.isEmpty())
-            return Optional.empty();
-        return Optional.of(user.get().getFullName());
+        return user
+                .stream()
+                .map(User::getFullName)
+                .findFirst();
     }
 
     public Optional<Integer> getBalance() {
-        if (user.isEmpty())
-            return Optional.empty();
-        return Optional.of(user.get().getBalance());
+        return user
+                .stream()
+                .map(User::getBalance)
+                .findFirst();
     }
 
     public boolean checkPassword(String password) {
