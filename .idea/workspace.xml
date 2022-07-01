@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Formated code">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ATMInteface_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ATMInteface_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -2,7 +2,6 @@ package bank.session;
 
 import bank.Bank;
 
-import java.util.Optional;
 import java.util.Scanner;
 
 import static bank.session.SessionUtil.*;
@@ -23,7 +22,7 @@ interface SessionActions {
                 && bank
                         .performAction(session)
                         .deposit(amount.get()),
-                "Sucess! View your balance to see the change.",
+                "Success! View your balance to see the change.",
                 "Could not deposit to account. Only positive numbers are allowed"
         );
 
@@ -41,7 +40,7 @@ interface SessionActions {
                 && bank
                         .performAction(session)
                         .withdraw(amount.get()),
-                "Sucess! You have now withdrawn money from you account. View your balance to see the changes",
+                "Success! You have now withdrawn money from you account. View your balance to see the changes",
                 "Could not process the transaction. Do you have enough funds on your account?"
         );
 
@@ -52,8 +51,12 @@ interface SessionActions {
 
         var username = bank.performAction(session).getUsername();
         var fullName = bank.performAction(session).getFullName();
+        boolean success = username.isPresent() && fullName.isPresent();
 
-        assert username.isPresent() && fullName.isPresent();
+        if(!success){
+            System.out.println("Could not read user profile");
+            return;
+        }
 
         String s = "-- Your profile --\n\n" +
                 "Username : " +
@@ -69,9 +72,14 @@ interface SessionActions {
     }
 
     static void viewBalance(Bank bank, Session session){
-        Optional<Integer> balance = bank.performAction(session).getBalance();
-        assert balance.isPresent();
-        System.out.println("Your balance is " + balance.get());
+        var balance = bank
+                .performAction(session)
+                .getBalance();
+
+        balance.ifPresentOrElse(
+                (x) -> System.out.println("Your balance is " + x),
+                ()  -> System.out.println("Could not read balance.")
+        );
         waitForClick();
     }
 
@@ -84,10 +92,12 @@ interface SessionActions {
         String receiverIdOrUsername = scanner.nextLine();
 
 
-        var amount = readInt("""
+        var amount = readInt(
+                    """
                     You are about to transfer money to another user.
                     Please enter an amount to transfer:
-                    """);
+                    """
+        );
 
         handle(
                 amount.isPresent()
