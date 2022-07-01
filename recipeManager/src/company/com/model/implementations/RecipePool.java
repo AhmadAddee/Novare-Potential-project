@@ -37,8 +37,7 @@ public class RecipePool implements Iterable<Recipe>, IRecipePool {
 
     @Override
     public void addIngredients(List<String> ingredients, int id){
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         for (String str : ingredients){
             allRecipes.get(id - 1).addIngredient(str);
         }
@@ -46,8 +45,7 @@ public class RecipePool implements Iterable<Recipe>, IRecipePool {
 
     @Override
     public void addStep(List<String> steps, int id) {
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         for (String str : steps){
             allRecipes.get(id - 1).addStep(str);
         }
@@ -55,29 +53,25 @@ public class RecipePool implements Iterable<Recipe>, IRecipePool {
 
     @Override
     public void setTag(String tag, int id) {
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         allRecipes.get(id - 1).setTag(tag);
     }
 
     @Override
     public String getMeal(int id) {
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         return allRecipes.get(id - 1).getMeal();
     }
 
     @Override
     public IRecipe getRecipe(int id){
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         return allRecipes.get(id - 1);
     }
 
     @Override
     public String getTag(int id){
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         return allRecipes.get(id - 1).getTag();
     }
 
@@ -88,15 +82,13 @@ public class RecipePool implements Iterable<Recipe>, IRecipePool {
 
     @Override
     public List<String> getIngredients(int id) {
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         return allRecipes.get(id - 1).getIngredients();
     }
 
     @Override
     public List<String> getSteps(int id) {
-        if (id > allRecipes.size())
-            throw new IllegalStateException();
+        validateRecipeId(id);
         return allRecipes.get(id - 1).getSteps();
     }
 
@@ -110,7 +102,10 @@ public class RecipePool implements Iterable<Recipe>, IRecipePool {
     }
 
 
-
+    private void validateRecipeId(int id) throws IllegalArgumentException{
+        if (id > allRecipes.size())
+            throw new IllegalArgumentException();
+    }
 
 
 

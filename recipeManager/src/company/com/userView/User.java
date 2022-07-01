@@ -50,16 +50,6 @@ public class User extends Person implements IUser {
     }
 
     @Override
-    public Object getInput() {
-        return super.getInput();
-    }
-
-    @Override
-    public void invalidOption() {
-        super.invalidOption();
-    }
-
-    @Override
     public void viewRecipeWeeks() {
         System.out.println(userWeekList);
     }

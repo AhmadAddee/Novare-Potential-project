@@ -40,21 +40,18 @@ public class RecipeWeekGenerator implements IRecipeWeekGenerator {
     }
 
     private int generateRecipeId(int noOfRecipes){
-        int id = (int) (Math.random()*noOfRecipes) +1;
+        int id;
+        Random rnd = new Random();
+        do {
+            id = rnd.nextInt(noOfRecipes) + 1;
+        }while(alreadyExist(id));
 
-        while (alreadyExist(id)){
-            id = (int) (Math.random()*noOfRecipes) +1;
-        }
         generatedRecipes.add(id);
         return id;
     }
 
     private boolean alreadyExist(int id){
-        for (int i : generatedRecipes){
-            if (i == id)
-                return true;
-        }
-        return false;
+        return generatedRecipes.contains(id);
     }
 
     @Override

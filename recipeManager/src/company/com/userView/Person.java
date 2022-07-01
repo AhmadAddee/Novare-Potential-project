@@ -46,9 +46,11 @@ public class Person {
 
     public Object getInput() {
         Scanner scan = new Scanner(System.in);
-        var option = scan.nextLine();
-        while (option.equals(""))
+        String option;
+        do {
             option = scan.nextLine();
+        }while(option.isBlank());   //Could also be option.isEmpty()
+
         return option;
     }
 
