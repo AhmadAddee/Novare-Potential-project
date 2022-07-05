@@ -1,5 +1,8 @@
 # ATMInterface
 
+## IMPORTANT!
+When running the application, there are some mockup users in the system. When testing, either create a new user or login with an existing one (for example adam:1234).
+
 ## About
 This project contains a small ATM/BANK simulator written in Java.
 
