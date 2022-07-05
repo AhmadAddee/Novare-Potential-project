@@ -43,7 +43,7 @@ public class Session{
             case '5' -> updateUsername(bank,this);
             case '6' -> updatePassword(bank,this);
             case '7' -> viewProfile(bank,this);
-            case 'h' -> printOptions();
+            case 'h' -> printOptions(); // Unusable option?
             case 'q' -> {
                 done = true;
                 bank.signout(this);

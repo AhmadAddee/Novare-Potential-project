@@ -21,6 +21,9 @@ interface SessionUtil {
         }
     }
 
+    //ToDo
+    //Empty spaces are not taken as invalid input
+    //It also takes the first char ignoring everything after
     static char getOption() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Option: ");
@@ -59,6 +62,8 @@ interface SessionUtil {
         System.out.println("Invalid option. Use [h] to show what options are available");
     }
 
+    //ToDo
+    //Start with user list index 1
     static void printUserList(){
         String userIdMapping = Bank.getInstance().getUserIdMapping();
         System.out.println(userIdMapping);

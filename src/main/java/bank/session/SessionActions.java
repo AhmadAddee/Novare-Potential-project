@@ -105,6 +105,9 @@ interface SessionActions {
         waitForClick();
     }
 
+    //ToDo
+    //When updating username, you're only allowed to sign in with your old one
+    //After updating username you're not able to change back to the older one
     static void updateUsername(Bank bank, Session session){
         Scanner scanner = new Scanner(System.in);
         System.out.print("New username: ");

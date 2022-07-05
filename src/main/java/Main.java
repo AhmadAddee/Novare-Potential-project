@@ -95,7 +95,10 @@ public class Main {
         return login();
     }
 
-
+    //ToDo
+    //The user should have the option to not continue signing up, by typing 'q'?
+    //The app actually create a user with 'q'!
+    //When signing up ( and login in), the app takes empty input as validate input
     private static class TerminalIO {
         public static String getUsername() {
             System.out.print("Username: ");
@@ -112,6 +115,8 @@ public class Main {
             return scanner.nextLine();
         }
 
+        //ToDo
+        //the application crashes when typing (empty) enter from the main menu
         public static char readOption(){
             return scanner.nextLine().charAt(0);
         }

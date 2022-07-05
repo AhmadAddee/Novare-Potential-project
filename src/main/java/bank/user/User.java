@@ -5,7 +5,8 @@ class User {
     private final String fullName;
     private Password password;
 
-    int balance;
+    //ToDo
+    int balance; // must be private!
 
     protected User(String username, String fullName, String password) throws IllegalArgumentException {
         if(!validUsername(username))
