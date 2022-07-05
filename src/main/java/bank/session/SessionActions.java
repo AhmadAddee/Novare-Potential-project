@@ -48,25 +48,20 @@ interface SessionActions {
     }
 
     static void viewProfile(Bank bank, Session session){
-
         var username = bank.performAction(session).getUsername();
         var fullName = bank.performAction(session).getFullName();
-        boolean success = username.isPresent() && fullName.isPresent();
 
-        if(!success){
-            System.out.println("Could not read user profile");
-            return;
-        }
-
-        String s = "-- Your profile --\n\n" +
-                "Username : " +
-                username.get() +
-                "\n" +
-                "Full name : " +
-                fullName.get() +
-                '\n';
-
-        System.out.println(s);
+        handle(
+                username.isPresent() && fullName.isPresent(),
+                "-- Your profile --\n\n" +
+                        "Username : " +
+                        username.get() +
+                        "\n" +
+                        "Full name : " +
+                        fullName.get() +
+                        '\n',
+                "Could not read user profile"
+        );
 
         waitForClick();
     }
@@ -76,21 +71,20 @@ interface SessionActions {
                 .performAction(session)
                 .getBalance();
 
-        balance.ifPresentOrElse(
-                (x) -> System.out.println("Your balance is " + x),
-                ()  -> System.out.println("Could not read balance.")
+        handle(
+                balance.isPresent(),
+                "Your balance is " + balance.get(),
+                "Could not read balance."
         );
+
         waitForClick();
     }
 
     static void transfer(Bank bank, Session session){
         Scanner scanner = new Scanner(System.in);
         printUserList();
-
         System.out.print("Enter either a username or the corresponding [id]: ");
-
         String receiverIdOrUsername = scanner.nextLine();
-
 
         var amount = readInt(
                     """
@@ -142,6 +136,4 @@ interface SessionActions {
 
         waitForClick();
     }
-
-
 }

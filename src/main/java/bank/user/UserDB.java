@@ -104,7 +104,6 @@ public class UserDB {
             System.out.println("INFO: Could not init mockup users!");
             System.out.println("INFO: Continuing without mockup users");
         }
-
     }
 
     /**
@@ -126,7 +125,4 @@ public class UserDB {
     public UserQuery performActionOn(int userID){
         return new UserQuery(this, userID);
     }
-
-
-
 }
