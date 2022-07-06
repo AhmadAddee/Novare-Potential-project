@@ -11,7 +11,6 @@ import static bank.session.SessionUtil.*;
  */
 interface SessionActions {
 
-
     static void deposit(Bank bank, Session session){
         var amount = readInt("""
                 You are about to deposit money into your account

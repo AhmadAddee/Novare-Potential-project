@@ -54,6 +54,7 @@ public class UserQuery {
                 && user.get().transfer(amount, receiver.get());
     }
 
+    //It updates username but the user isn't allowed to sign in with the new one
     public boolean updateUsername(String newUsername) {
         boolean alreadyExists = userDB.containsUser(newUsername);
         return !alreadyExists

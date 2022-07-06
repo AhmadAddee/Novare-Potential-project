@@ -25,11 +25,15 @@ class User {
      * @return True if successful, False if the balance < amount
      */
     public boolean withdraw(int amount){
-        if(amount > this.balance || amount < 0)
+        if (invalidAmount(amount))
             return false;
 
         this.balance -= amount;
         return true;
+    }
+
+    private boolean invalidAmount(int amount){
+        return !(amount > this.balance || amount < 0);
     }
 
     /**
@@ -54,7 +58,7 @@ class User {
      * @return True if successful. False if the amount is negative.
      */
     public boolean transfer(int amount, User receiver){
-        if(amount < 0 || this.balance < 0)
+        if(invalidAmount(amount))
             return false;
 
         this.balance -= amount;

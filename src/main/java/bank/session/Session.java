@@ -27,6 +27,8 @@ public class Session{
      * A method for the main menu. This is meant to be looped in a while-loop until the user is done.
      * @return returns true when the loop is NOT done.
      */
+    //Todo
+    //Could also break it up
     public boolean loop(){
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -50,8 +52,7 @@ public class Session{
             }
             default -> invalidOption();
         }
-
-        return !done;
+        return !isDone();
     }
 
     /**

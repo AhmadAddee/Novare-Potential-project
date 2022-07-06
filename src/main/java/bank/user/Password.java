@@ -14,7 +14,7 @@ class Password {
     public Password(String clearText) {
         Random rand = new Random();
         this.salt = rand.nextInt();
-        this.hash = getSHA256(clearText,salt);
+        this.hash = getSHA256(clearText, salt);
     }
 
     protected Password(String clearText, Integer salt){

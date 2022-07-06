@@ -70,7 +70,6 @@ public class Bank {
                     .append(username.get())
                     .append("\n");
         }
-
         return sb.toString();
     }
 

@@ -20,6 +20,7 @@ public class Main {
     }
 
 
+    //Too long method, maybe could break it up into print-, getOption- and isPresent-methods?
     private static boolean menu() {
         boolean quit = false;
 
@@ -55,7 +56,6 @@ public class Main {
 
         return !quit;
     }
-
 
     private static Optional<Session> login(){
         System.out.println("-- Login --");

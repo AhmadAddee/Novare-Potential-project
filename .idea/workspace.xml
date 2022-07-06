@@ -9,14 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Removed usage of asserts, since they aren't supported by default">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+    <list default="true" id="183ba2a1-6a23-430f-9962-62eb4102acf5" name="Changes" comment="Input comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/Bank.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/session/SessionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/Password.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +94,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ATMInterface-main" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -430,7 +432,13 @@
       <option name="project" value="LOCAL" />
       <updated>1656669384603</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL−00029" summary="Input comments">
+      <created>1657047466808</created>
+      <option name="number" value="LOCAL−00029" />
+      <option name="presentableId" value="LOCAL−00029" />
+      <updated>1657047466808</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -439,6 +447,11 @@
         <entry key="2e8961cb-90a3-48c4-8bb3-56841630c2b7">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
@@ -488,7 +501,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created a password class that stores the password as a SHA256 hash" />
     <MESSAGE value="Fixed so users can now sign up and sign in with passwords in the bank" />
     <MESSAGE value="Made small changes&#10;&#10;Introduced getters for Password.java&#10;Added some javadoc and getters for User.java" />
     <MESSAGE value="Added a withdraw method for the session object" />
@@ -513,7 +525,8 @@
     <MESSAGE value="Complemented some optional statements with stream operations" />
     <MESSAGE value="Formated code" />
     <MESSAGE value="Removed usage of asserts, since they aren't supported by default" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed usage of asserts, since they aren't supported by default" />
+    <MESSAGE value="Input comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -521,7 +534,7 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <condition expression="// TODO: 2022-07-05" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/main/java/bank/session/SessionActions.java</url>
-          <line>107</line>
+          <line>106</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
@@ -548,12 +561,31 @@
           <line>117</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <condition expression="// TODO: 2022-07-05" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <condition expression="// TODO: 2022-07-05" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/bank/user/UserQuery.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <condition expression="// TODO: 2022-07-05" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/main/java/bank/user/User.java</url>
           <line>8</line>
           <properties field="balance" class="bank.user.User" />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <condition expression="// TODO: 2022-07-05" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/bank/Bank.java</url>
+          <line>13</line>
+          <properties field="sessionUsernameMapping" class="bank.Bank" />
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-defaults>
